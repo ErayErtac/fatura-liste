@@ -1,0 +1,1204 @@
+{
+  "invoices": [
+    {
+      "id": "inv-1",
+      "faturaNo": "FTR-2026-0001",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-04-22",
+      "vadeTarihi": "2026-01-04",
+      "tutar": 58676.33,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-2",
+      "faturaNo": "FTR-2026-0002",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-05-30",
+      "vadeTarihi": "2026-04-27",
+      "tutar": 95292.58,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-3",
+      "faturaNo": "FTR-2026-0003",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-06-14",
+      "vadeTarihi": "2026-01-03",
+      "tutar": 145966.69,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-4",
+      "faturaNo": "FTR-2026-0004",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-01-11",
+      "vadeTarihi": "2026-04-29",
+      "tutar": 87672.43,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-5",
+      "faturaNo": "FTR-2026-0005",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-04-03",
+      "vadeTarihi": "2026-03-02",
+      "tutar": 71978.69,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-6",
+      "faturaNo": "FTR-2026-0006",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-06-24",
+      "vadeTarihi": "2026-03-11",
+      "tutar": 16330.28,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-7",
+      "faturaNo": "FTR-2026-0007",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-01-26",
+      "vadeTarihi": "2026-07-09",
+      "tutar": 110313.86,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-8",
+      "faturaNo": "FTR-2026-0008",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-02-02",
+      "vadeTarihi": "2026-05-19",
+      "tutar": 99175.39,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-9",
+      "faturaNo": "FTR-2026-0009",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-01-06",
+      "vadeTarihi": "2026-01-14",
+      "tutar": 106335.01,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-10",
+      "faturaNo": "FTR-2026-0010",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-05-31",
+      "vadeTarihi": "2026-07-08",
+      "tutar": 121775.97,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-11",
+      "faturaNo": "FTR-2026-0011",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-02-08",
+      "vadeTarihi": "2026-05-16",
+      "tutar": 79354.52,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-12",
+      "faturaNo": "FTR-2026-0012",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-07-17",
+      "vadeTarihi": "2026-08-02",
+      "tutar": 73167.99,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-13",
+      "faturaNo": "FTR-2026-0013",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-05-29",
+      "vadeTarihi": "2026-04-28",
+      "tutar": 90685.14,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-14",
+      "faturaNo": "FTR-2026-0014",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-05-27",
+      "vadeTarihi": "2026-07-19",
+      "tutar": 14177.06,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-15",
+      "faturaNo": "FTR-2026-0015",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-06-11",
+      "vadeTarihi": "2026-03-01",
+      "tutar": 108438.96,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-16",
+      "faturaNo": "FTR-2026-0016",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-02-02",
+      "vadeTarihi": "2026-07-29",
+      "tutar": 16527.57,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-17",
+      "faturaNo": "FTR-2026-0017",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-01-22",
+      "vadeTarihi": "2026-02-23",
+      "tutar": 122921.97,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-18",
+      "faturaNo": "FTR-2026-0018",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-04-30",
+      "vadeTarihi": "2026-07-27",
+      "tutar": 102694.09,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-19",
+      "faturaNo": "FTR-2026-0019",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-01-07",
+      "vadeTarihi": "2026-02-24",
+      "tutar": 130758.74,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-20",
+      "faturaNo": "FTR-2026-0020",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-06-05",
+      "vadeTarihi": "2026-02-09",
+      "tutar": 111162.05,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-21",
+      "faturaNo": "FTR-2026-0021",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-05-04",
+      "vadeTarihi": "2026-09-01",
+      "tutar": 34321.7,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-22",
+      "faturaNo": "FTR-2026-0022",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-04-15",
+      "vadeTarihi": "2026-01-02",
+      "tutar": 9602.74,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-23",
+      "faturaNo": "FTR-2026-0023",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-04-02",
+      "vadeTarihi": "2026-01-01",
+      "tutar": 109564.59,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-24",
+      "faturaNo": "FTR-2026-0024",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-01-03",
+      "vadeTarihi": "2026-08-15",
+      "tutar": 121400.02,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-25",
+      "faturaNo": "FTR-2026-0025",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-04-01",
+      "vadeTarihi": "2026-05-01",
+      "tutar": 36670.95,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-26",
+      "faturaNo": "FTR-2026-0026",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-02-18",
+      "vadeTarihi": "2026-01-26",
+      "tutar": 88156.16,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-27",
+      "faturaNo": "FTR-2026-0027",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-03-28",
+      "vadeTarihi": "2026-06-06",
+      "tutar": 113226.29,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-28",
+      "faturaNo": "FTR-2026-0028",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-01-13",
+      "vadeTarihi": "2026-08-05",
+      "tutar": 10441.25,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-29",
+      "faturaNo": "FTR-2026-0029",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-05-24",
+      "vadeTarihi": "2026-02-12",
+      "tutar": 80112.97,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-30",
+      "faturaNo": "FTR-2026-0030",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-06-03",
+      "vadeTarihi": "2026-05-24",
+      "tutar": 142590.05,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-31",
+      "faturaNo": "FTR-2026-0031",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-06-17",
+      "vadeTarihi": "2026-06-21",
+      "tutar": 118909.78,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-32",
+      "faturaNo": "FTR-2026-0032",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-03-06",
+      "vadeTarihi": "2025-12-31",
+      "tutar": 70776.19,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-33",
+      "faturaNo": "FTR-2026-0033",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-05-27",
+      "vadeTarihi": "2026-06-14",
+      "tutar": 96278.03,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-34",
+      "faturaNo": "FTR-2026-0034",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-04-24",
+      "vadeTarihi": "2026-08-11",
+      "tutar": 53915.43,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-35",
+      "faturaNo": "FTR-2026-0035",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-05-26",
+      "vadeTarihi": "2026-09-06",
+      "tutar": 38231.65,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-36",
+      "faturaNo": "FTR-2026-0036",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-03-11",
+      "vadeTarihi": "2026-03-11",
+      "tutar": 63112.67,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-37",
+      "faturaNo": "FTR-2026-0037",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-05-18",
+      "vadeTarihi": "2026-05-27",
+      "tutar": 130413.78,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-38",
+      "faturaNo": "FTR-2026-0038",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-01-14",
+      "vadeTarihi": "2026-05-18",
+      "tutar": 148503.19,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-39",
+      "faturaNo": "FTR-2026-0039",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-06-04",
+      "vadeTarihi": "2026-02-22",
+      "tutar": 109109.5,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-40",
+      "faturaNo": "FTR-2026-0040",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-02-12",
+      "vadeTarihi": "2026-02-03",
+      "tutar": 73068.03,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-41",
+      "faturaNo": "FTR-2026-0041",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-01-03",
+      "vadeTarihi": "2026-01-30",
+      "tutar": 105463.34,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-42",
+      "faturaNo": "FTR-2026-0042",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-03-07",
+      "vadeTarihi": "2026-06-02",
+      "tutar": 142975.69,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-43",
+      "faturaNo": "FTR-2026-0043",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-01-23",
+      "vadeTarihi": "2026-02-12",
+      "tutar": 29741.21,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-44",
+      "faturaNo": "FTR-2026-0044",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-01-22",
+      "vadeTarihi": "2026-02-15",
+      "tutar": 29023.15,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-45",
+      "faturaNo": "FTR-2026-0045",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-06-05",
+      "vadeTarihi": "2026-02-06",
+      "tutar": 31992.58,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-46",
+      "faturaNo": "FTR-2026-0046",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-05-06",
+      "vadeTarihi": "2026-04-19",
+      "tutar": 44950.69,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-47",
+      "faturaNo": "FTR-2026-0047",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-04-03",
+      "vadeTarihi": "2026-08-10",
+      "tutar": 34194.55,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-48",
+      "faturaNo": "FTR-2026-0048",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-06-28",
+      "vadeTarihi": "2026-08-21",
+      "tutar": 72032.05,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-49",
+      "faturaNo": "FTR-2026-0049",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-02-08",
+      "vadeTarihi": "2026-01-26",
+      "tutar": 69350.51,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-50",
+      "faturaNo": "FTR-2026-0050",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-02-19",
+      "vadeTarihi": "2026-07-29",
+      "tutar": 150088.68,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-51",
+      "faturaNo": "FTR-2026-0051",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-02-03",
+      "vadeTarihi": "2026-03-02",
+      "tutar": 43461.36,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-52",
+      "faturaNo": "FTR-2026-0052",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-01-14",
+      "vadeTarihi": "2026-02-14",
+      "tutar": 27282.91,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-53",
+      "faturaNo": "FTR-2026-0053",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-07-01",
+      "vadeTarihi": "2026-06-15",
+      "tutar": 22912.71,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-54",
+      "faturaNo": "FTR-2026-0054",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-07-06",
+      "vadeTarihi": "2026-04-27",
+      "tutar": 37541.53,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-55",
+      "faturaNo": "FTR-2026-0055",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-06-13",
+      "vadeTarihi": "2026-06-20",
+      "tutar": 9583.97,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-56",
+      "faturaNo": "FTR-2026-0056",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-05-01",
+      "vadeTarihi": "2026-08-08",
+      "tutar": 134006.64,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-57",
+      "faturaNo": "FTR-2026-0057",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-03-26",
+      "vadeTarihi": "2026-04-29",
+      "tutar": 12607.87,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-58",
+      "faturaNo": "FTR-2026-0058",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-02-28",
+      "vadeTarihi": "2026-04-21",
+      "tutar": 16250.36,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-59",
+      "faturaNo": "FTR-2026-0059",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-07-15",
+      "vadeTarihi": "2026-05-22",
+      "tutar": 72344.72,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-60",
+      "faturaNo": "FTR-2026-0060",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-04-30",
+      "vadeTarihi": "2026-05-10",
+      "tutar": 70156.8,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-61",
+      "faturaNo": "FTR-2026-0061",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-02-04",
+      "vadeTarihi": "2026-01-15",
+      "tutar": 103512.86,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-62",
+      "faturaNo": "FTR-2026-0062",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-05-09",
+      "vadeTarihi": "2026-02-25",
+      "tutar": 69788.59,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-63",
+      "faturaNo": "FTR-2026-0063",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-01-27",
+      "vadeTarihi": "2026-03-06",
+      "tutar": 113469.56,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-64",
+      "faturaNo": "FTR-2026-0064",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-05-05",
+      "vadeTarihi": "2026-07-13",
+      "tutar": 137770.25,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-65",
+      "faturaNo": "FTR-2026-0065",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-05-23",
+      "vadeTarihi": "2026-07-31",
+      "tutar": 66478.3,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-66",
+      "faturaNo": "FTR-2026-0066",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-03-30",
+      "vadeTarihi": "2026-02-01",
+      "tutar": 60155.23,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-67",
+      "faturaNo": "FTR-2026-0067",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-06-24",
+      "vadeTarihi": "2026-04-30",
+      "tutar": 147253.66,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-68",
+      "faturaNo": "FTR-2026-0068",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-01-17",
+      "vadeTarihi": "2026-05-31",
+      "tutar": 12113.37,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-69",
+      "faturaNo": "FTR-2026-0069",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-03-20",
+      "vadeTarihi": "2026-01-16",
+      "tutar": 148522.06,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-70",
+      "faturaNo": "FTR-2026-0070",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-01-29",
+      "vadeTarihi": "2026-07-13",
+      "tutar": 129318.81,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-71",
+      "faturaNo": "FTR-2026-0071",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-02-26",
+      "vadeTarihi": "2026-07-07",
+      "tutar": 30984.25,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-72",
+      "faturaNo": "FTR-2026-0072",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-02-02",
+      "vadeTarihi": "2026-01-10",
+      "tutar": 1582.97,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-73",
+      "faturaNo": "FTR-2026-0073",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-02-25",
+      "vadeTarihi": "2026-02-03",
+      "tutar": 122616.29,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-74",
+      "faturaNo": "FTR-2026-0074",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-06-28",
+      "vadeTarihi": "2026-07-24",
+      "tutar": 108356.61,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-75",
+      "faturaNo": "FTR-2026-0075",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-01-31",
+      "vadeTarihi": "2026-01-01",
+      "tutar": 134313.63,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-76",
+      "faturaNo": "FTR-2026-0076",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-01-23",
+      "vadeTarihi": "2026-05-12",
+      "tutar": 104851.54,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-77",
+      "faturaNo": "FTR-2026-0077",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-03-24",
+      "vadeTarihi": "2026-02-14",
+      "tutar": 7271.19,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-78",
+      "faturaNo": "FTR-2026-0078",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-01-15",
+      "vadeTarihi": "2026-01-02",
+      "tutar": 150049.41,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-79",
+      "faturaNo": "FTR-2026-0079",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-05-22",
+      "vadeTarihi": "2026-06-06",
+      "tutar": 99863.86,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-80",
+      "faturaNo": "FTR-2026-0080",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-04-30",
+      "vadeTarihi": "2026-07-08",
+      "tutar": 105827.07,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-81",
+      "faturaNo": "FTR-2026-0081",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-01-01",
+      "vadeTarihi": "2026-01-20",
+      "tutar": 76183.53,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-82",
+      "faturaNo": "FTR-2026-0082",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-03-12",
+      "vadeTarihi": "2026-03-27",
+      "tutar": 109281.86,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-83",
+      "faturaNo": "FTR-2026-0083",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-01-26",
+      "vadeTarihi": "2026-06-24",
+      "tutar": 129744.41,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-84",
+      "faturaNo": "FTR-2026-0084",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-01-04",
+      "vadeTarihi": "2026-04-30",
+      "tutar": 13696.98,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-85",
+      "faturaNo": "FTR-2026-0085",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-02-22",
+      "vadeTarihi": "2026-02-27",
+      "tutar": 64544.45,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-86",
+      "faturaNo": "FTR-2026-0086",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-05-06",
+      "vadeTarihi": "2026-05-29",
+      "tutar": 117174.62,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-87",
+      "faturaNo": "FTR-2026-0087",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-07-02",
+      "vadeTarihi": "2026-05-18",
+      "tutar": 35013.76,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-88",
+      "faturaNo": "FTR-2026-0088",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-02-09",
+      "vadeTarihi": "2026-04-06",
+      "tutar": 33248.35,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-89",
+      "faturaNo": "FTR-2026-0089",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-04-12",
+      "vadeTarihi": "2026-05-27",
+      "tutar": 4743.74,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-90",
+      "faturaNo": "FTR-2026-0090",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-07-08",
+      "vadeTarihi": "2026-04-15",
+      "tutar": 114373.06,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-91",
+      "faturaNo": "FTR-2026-0091",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-04-11",
+      "vadeTarihi": "2026-03-16",
+      "tutar": 129043.6,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-92",
+      "faturaNo": "FTR-2026-0092",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-04-02",
+      "vadeTarihi": "2026-08-31",
+      "tutar": 24320.8,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-93",
+      "faturaNo": "FTR-2026-0093",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-01-26",
+      "vadeTarihi": "2026-04-02",
+      "tutar": 79669.03,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-94",
+      "faturaNo": "FTR-2026-0094",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-01-01",
+      "vadeTarihi": "2026-01-09",
+      "tutar": 10440.88,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-95",
+      "faturaNo": "FTR-2026-0095",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-01-24",
+      "vadeTarihi": "2026-07-12",
+      "tutar": 86668.65,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-96",
+      "faturaNo": "FTR-2026-0096",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-04-02",
+      "vadeTarihi": "2026-02-12",
+      "tutar": 125138.11,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-97",
+      "faturaNo": "FTR-2026-0097",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-05-08",
+      "vadeTarihi": "2026-06-09",
+      "tutar": 58975.78,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-98",
+      "faturaNo": "FTR-2026-0098",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-05-02",
+      "vadeTarihi": "2026-06-15",
+      "tutar": 139840.65,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-99",
+      "faturaNo": "FTR-2026-0099",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-04-30",
+      "vadeTarihi": "2026-01-30",
+      "tutar": 97002.82,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-100",
+      "faturaNo": "FTR-2026-0100",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-04-11",
+      "vadeTarihi": "2026-06-13",
+      "tutar": 23096.59,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-101",
+      "faturaNo": "FTR-2026-0101",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-07-11",
+      "vadeTarihi": "2026-06-22",
+      "tutar": 94866.62,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-102",
+      "faturaNo": "FTR-2026-0102",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-04-26",
+      "vadeTarihi": "2026-04-29",
+      "tutar": 100675.9,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-103",
+      "faturaNo": "FTR-2026-0103",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-01-31",
+      "vadeTarihi": "2026-07-19",
+      "tutar": 149024.79,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-104",
+      "faturaNo": "FTR-2026-0104",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-06-27",
+      "vadeTarihi": "2026-05-12",
+      "tutar": 123252.43,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-105",
+      "faturaNo": "FTR-2026-0105",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-01-16",
+      "vadeTarihi": "2026-05-22",
+      "tutar": 40809.36,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-106",
+      "faturaNo": "FTR-2026-0106",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-02-20",
+      "vadeTarihi": "2026-06-16",
+      "tutar": 65696.96,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-107",
+      "faturaNo": "FTR-2026-0107",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-03-06",
+      "vadeTarihi": "2026-03-16",
+      "tutar": 126230.55,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-108",
+      "faturaNo": "FTR-2026-0108",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-01-17",
+      "vadeTarihi": "2026-03-22",
+      "tutar": 37681.42,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-109",
+      "faturaNo": "FTR-2026-0109",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-04-26",
+      "vadeTarihi": "2026-07-28",
+      "tutar": 99850.88,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-110",
+      "faturaNo": "FTR-2026-0110",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-02-23",
+      "vadeTarihi": "2026-05-13",
+      "tutar": 125820.78,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-111",
+      "faturaNo": "FTR-2026-0111",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-01-14",
+      "vadeTarihi": "2026-07-31",
+      "tutar": 58095.82,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-112",
+      "faturaNo": "FTR-2026-0112",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-03-19",
+      "vadeTarihi": "2026-07-21",
+      "tutar": 23386.01,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-113",
+      "faturaNo": "FTR-2026-0113",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-04-11",
+      "vadeTarihi": "2026-02-06",
+      "tutar": 94664.87,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-114",
+      "faturaNo": "FTR-2026-0114",
+      "musteri": "Mavi Lojistik A.Ş.",
+      "duzenlemeTarihi": "2026-01-24",
+      "vadeTarihi": "2026-01-05",
+      "tutar": 3929.87,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-115",
+      "faturaNo": "FTR-2026-0115",
+      "musteri": "Yılmaz Ticaret A.Ş.",
+      "duzenlemeTarihi": "2026-01-07",
+      "vadeTarihi": "2026-02-23",
+      "tutar": 55431.38,
+      "tip": "Alış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-116",
+      "faturaNo": "FTR-2026-0116",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-02-03",
+      "vadeTarihi": "2026-02-14",
+      "tutar": 144225.79,
+      "tip": "Satış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-117",
+      "faturaNo": "FTR-2026-0117",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-01-18",
+      "vadeTarihi": "2026-03-24",
+      "tutar": 148445.67,
+      "tip": "Alış",
+      "durum": "Ödendi"
+    },
+    {
+      "id": "inv-118",
+      "faturaNo": "FTR-2026-0118",
+      "musteri": "Öztürk Tekstil Ltd.",
+      "duzenlemeTarihi": "2026-01-21",
+      "vadeTarihi": "2026-04-11",
+      "tutar": 114579.08,
+      "tip": "Satış",
+      "durum": "Bekliyor"
+    },
+    {
+      "id": "inv-119",
+      "faturaNo": "FTR-2026-0119",
+      "musteri": "Ege Elektronik",
+      "duzenlemeTarihi": "2026-02-19",
+      "vadeTarihi": "2026-03-29",
+      "tutar": 118659.31,
+      "tip": "Alış",
+      "durum": "Gecikmiş"
+    },
+    {
+      "id": "inv-120",
+      "faturaNo": "FTR-2026-0120",
+      "musteri": "Kaya Otomotiv",
+      "duzenlemeTarihi": "2026-05-27",
+      "vadeTarihi": "2026-04-29",
+      "tutar": 11672.04,
+      "tip": "Satış",
+      "durum": "Ödendi"
+    }
+  ]
+}

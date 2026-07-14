@@ -1,10 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import InvoiceRow from './components/InvoiceRow'
 import InvoiceDetailModal from './components/InvoiceDetailModal'
 import FilterForm, { bosFiltre } from './components/FilterForm'
 import type { FilterValues } from './components/FilterForm'
 import type { Invoice } from './models/invoice'
-import { mockInvoices } from './data/mockInvoices'
+import { faturalariGetir } from './api/resources/invoice'
 import styles from './App.module.scss'
 import './App.css'
 
@@ -12,13 +12,33 @@ type SiralamaAlani = keyof Pick<Invoice, 'faturaNo' | 'musteri' | 'tutar' | 'duz
 type SiralamaYonu = 'asc' | 'desc'
 
 function App() {
-  const [faturalar] = useState<Invoice[]>(mockInvoices)
+  const [faturalar, setFaturalar] = useState<Invoice[]>([])
+  const [yukleniyor, setYukleniyor] = useState(true)
+  const [hata, setHata] = useState<string | null>(null)
+
   const [filtre, setFiltre] = useState<FilterValues>(bosFiltre)
   const [siralamaAlani, setSiralamaAlani] = useState<SiralamaAlani>('faturaNo')
   const [siralamaYonu, setSiralamaYonu] = useState<SiralamaYonu>('asc')
   const [sayfaNo, setSayfaNo] = useState(1)
   const [sayfaBoyutu, setSayfaBoyutu] = useState(10)
   const [seciliFatura, setSeciliFatura] = useState<Invoice | null>(null)
+
+  useEffect(() => {
+    async function veriyiYukle() {
+      try {
+        setYukleniyor(true)
+        setHata(null)
+        const veri = await faturalariGetir()
+        setFaturalar(veri)
+      } catch (err) {
+        setHata('Faturalar yüklenirken bir hata oluştu. json-server çalışıyor mu?')
+      } finally {
+        setYukleniyor(false)
+      }
+    }
+
+    veriyiYukle()
+  }, [])
 
   const musteriler = useMemo(() => {
     const benzersiz = new Set(faturalar.map((f) => f.musteri))
@@ -86,27 +106,39 @@ function App() {
     setSayfaNo(1)
   }
 
+  if (yukleniyor) {
+    return <div className={styles.durumMesaji}>Yükleniyor...</div>
+  }
+
+  if (hata) {
+    return <div className={styles.durumMesaji}>{hata}</div>
+  }
+
   return (
     <div>
       <h1>Fatura Listesi</h1>
 
       <FilterForm musteriler={musteriler} onFiltrele={filtreUygula} />
 
-      <ul className={styles.list}>
-        <li className={styles.headerRow}>
-          <span onClick={() => kolonaTikla('faturaNo')}>Fatura No{okIsareti('faturaNo')}</span>
-          <span onClick={() => kolonaTikla('musteri')}>Müşteri{okIsareti('musteri')}</span>
-          <span onClick={() => kolonaTikla('duzenlemeTarihi')}>Düzenleme Tarihi{okIsareti('duzenlemeTarihi')}</span>
-          <span onClick={() => kolonaTikla('vadeTarihi')}>Vade Tarihi{okIsareti('vadeTarihi')}</span>
-          <span onClick={() => kolonaTikla('tutar')}>Tutar{okIsareti('tutar')}</span>
-          <span>Tip</span>
-          <span>Durum</span>
-          <span>İşlem</span>
-        </li>
-        {sayfadakiFaturalar.map((fatura) => (
-          <InvoiceRow key={fatura.id} fatura={fatura} onGoruntule={setSeciliFatura} />
-        ))}
-      </ul>
+      {sayfadakiFaturalar.length === 0 ? (
+        <p className={styles.durumMesaji}>Kriterlere uyan fatura bulunamadı.</p>
+      ) : (
+        <ul className={styles.list}>
+          <li className={styles.headerRow}>
+            <span onClick={() => kolonaTikla('faturaNo')}>Fatura No{okIsareti('faturaNo')}</span>
+            <span onClick={() => kolonaTikla('musteri')}>Müşteri{okIsareti('musteri')}</span>
+            <span onClick={() => kolonaTikla('duzenlemeTarihi')}>Düzenleme Tarihi{okIsareti('duzenlemeTarihi')}</span>
+            <span onClick={() => kolonaTikla('vadeTarihi')}>Vade Tarihi{okIsareti('vadeTarihi')}</span>
+            <span onClick={() => kolonaTikla('tutar')}>Tutar{okIsareti('tutar')}</span>
+            <span>Tip</span>
+            <span>Durum</span>
+            <span>İşlem</span>
+          </li>
+          {sayfadakiFaturalar.map((fatura) => (
+            <InvoiceRow key={fatura.id} fatura={fatura} onGoruntule={setSeciliFatura} />
+          ))}
+        </ul>
+      )}
 
       <div className={styles.pagination}>
         <button disabled={sayfaNo === 1} onClick={() => setSayfaNo((s) => s - 1)}>
