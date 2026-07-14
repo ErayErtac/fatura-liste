@@ -10,14 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "formik": "^2.4.9",
     "react": "^19.2.7",
+    "react-datepicker": "^9.1.0",
     "react-dom": "^19.2.7",
-    "react-modal": "^3.16.3"
+    "react-modal": "^3.16.3",
+    "react-select": "^5.10.2",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
+    "@types/react-datepicker": "^6.2.0",
     "@types/react-dom": "^19.2.3",
     "@types/react-modal": "^3.16.3",
     "@vitejs/plugin-react": "^6.0.3",

@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react'
 import InvoiceRow from './components/InvoiceRow'
 import InvoiceDetailModal from './components/InvoiceDetailModal'
+import FilterForm, { bosFiltre } from './components/FilterForm'
+import type { FilterValues } from './components/FilterForm'
 import type { Invoice } from './models/invoice'
 import { mockInvoices } from './data/mockInvoices'
 import styles from './App.module.scss'
@@ -11,33 +13,47 @@ type SiralamaYonu = 'asc' | 'desc'
 
 function App() {
   const [faturalar] = useState<Invoice[]>(mockInvoices)
-  const [aramaMetni, setAramaMetni] = useState('')
+  const [filtre, setFiltre] = useState<FilterValues>(bosFiltre)
   const [siralamaAlani, setSiralamaAlani] = useState<SiralamaAlani>('faturaNo')
   const [siralamaYonu, setSiralamaYonu] = useState<SiralamaYonu>('asc')
   const [sayfaNo, setSayfaNo] = useState(1)
   const [sayfaBoyutu, setSayfaBoyutu] = useState(10)
   const [seciliFatura, setSeciliFatura] = useState<Invoice | null>(null)
 
+  const musteriler = useMemo(() => {
+    const benzersiz = new Set(faturalar.map((f) => f.musteri))
+    return Array.from(benzersiz).sort()
+  }, [faturalar])
+
   const gorunenFaturalar = useMemo(() => {
-    const kelime = aramaMetni.trim().toLowerCase()
+    const kelime = filtre.aramaMetni.trim().toLowerCase()
 
-    const filtrelenmis = kelime === ''
-      ? faturalar
-      : faturalar.filter((fatura) =>
-          fatura.musteri.toLowerCase().includes(kelime) ||
-          fatura.faturaNo.toLowerCase().includes(kelime)
-        )
+    const filtrelenmis = faturalar.filter((fatura) => {
+      if (
+        kelime !== '' &&
+        !fatura.musteri.toLowerCase().includes(kelime) &&
+        !fatura.faturaNo.toLowerCase().includes(kelime)
+      ) return false
 
-    const siralanmis = [...filtrelenmis].sort((a, b) => {
+      if (filtre.musteri && fatura.musteri !== filtre.musteri) return false
+      if (filtre.durum && fatura.durum !== filtre.durum) return false
+      if (filtre.tip && fatura.tip !== filtre.tip) return false
+
+      const duzenlemeTarihi = new Date(fatura.duzenlemeTarihi)
+      if (filtre.baslangicTarihi && duzenlemeTarihi < filtre.baslangicTarihi) return false
+      if (filtre.bitisTarihi && duzenlemeTarihi > filtre.bitisTarihi) return false
+
+      return true
+    })
+
+    return [...filtrelenmis].sort((a, b) => {
       const aDeger = a[siralamaAlani]
       const bDeger = b[siralamaAlani]
       if (aDeger < bDeger) return siralamaYonu === 'asc' ? -1 : 1
       if (aDeger > bDeger) return siralamaYonu === 'asc' ? 1 : -1
       return 0
     })
-
-    return siralanmis
-  }, [faturalar, aramaMetni, siralamaAlani, siralamaYonu])
+  }, [faturalar, filtre, siralamaAlani, siralamaYonu])
 
   const toplamSayfa = Math.max(1, Math.ceil(gorunenFaturalar.length / sayfaBoyutu))
 
@@ -60,8 +76,8 @@ function App() {
     return siralamaYonu === 'asc' ? ' ▲' : ' ▼'
   }
 
-  function aramaDegisti(metin: string) {
-    setAramaMetni(metin)
+  function filtreUygula(yeniFiltre: FilterValues) {
+    setFiltre(yeniFiltre)
     setSayfaNo(1)
   }
 
@@ -74,23 +90,18 @@ function App() {
     <div>
       <h1>Fatura Listesi</h1>
 
-      <input
-        type="text"
-        placeholder="Fatura no / müşteri ara..."
-        value={aramaMetni}
-        onChange={(e) => aramaDegisti(e.target.value)}
-      />
+      <FilterForm musteriler={musteriler} onFiltrele={filtreUygula} />
 
       <ul className={styles.list}>
         <li className={styles.headerRow}>
-            <span onClick={() => kolonaTikla('faturaNo')}>Fatura No{okIsareti('faturaNo')}</span>
-            <span onClick={() => kolonaTikla('musteri')}>Müşteri{okIsareti('musteri')}</span>
-            <span onClick={() => kolonaTikla('duzenlemeTarihi')}>Düzenleme Tarihi{okIsareti('duzenlemeTarihi')}</span>
-            <span onClick={() => kolonaTikla('vadeTarihi')}>Vade Tarihi{okIsareti('vadeTarihi')}</span>
-            <span onClick={() => kolonaTikla('tutar')}>Tutar{okIsareti('tutar')}</span>
-            <span>Tip</span>
-            <span>Durum</span>
-            <span>İşlem</span>
+          <span onClick={() => kolonaTikla('faturaNo')}>Fatura No{okIsareti('faturaNo')}</span>
+          <span onClick={() => kolonaTikla('musteri')}>Müşteri{okIsareti('musteri')}</span>
+          <span onClick={() => kolonaTikla('duzenlemeTarihi')}>Düzenleme Tarihi{okIsareti('duzenlemeTarihi')}</span>
+          <span onClick={() => kolonaTikla('vadeTarihi')}>Vade Tarihi{okIsareti('vadeTarihi')}</span>
+          <span onClick={() => kolonaTikla('tutar')}>Tutar{okIsareti('tutar')}</span>
+          <span>Tip</span>
+          <span>Durum</span>
+          <span>İşlem</span>
         </li>
         {sayfadakiFaturalar.map((fatura) => (
           <InvoiceRow key={fatura.id} fatura={fatura} onGoruntule={setSeciliFatura} />

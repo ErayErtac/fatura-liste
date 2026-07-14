@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  padding: 12px;
+  background-color: #fafafa;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+
+  label {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
+
+.error {
+  color: #b02a2a;
+  font-size: 0.75rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
