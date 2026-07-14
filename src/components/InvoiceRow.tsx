@@ -4,9 +4,10 @@ import styles from './InvoiceRow.module.scss'
 
 interface InvoiceRowProps {
   fatura: Invoice
+  onGoruntule: (fatura: Invoice) => void
 }
 
-function InvoiceRow({ fatura }: InvoiceRowProps) {
+function InvoiceRow({ fatura, onGoruntule }: InvoiceRowProps) {
   const durumClass =
     fatura.durum === 'Ödendi' ? styles.paid :
     fatura.durum === 'Gecikmiş' ? styles.overdue :
@@ -22,6 +23,16 @@ function InvoiceRow({ fatura }: InvoiceRowProps) {
       <span>{fatura.tip}</span>
       <span className={durumClass}>
         <span className={styles.status}>{fatura.durum}</span>
+      </span>
+      <span>
+        <button
+          type="button"
+          className={styles.viewButton}
+          onClick={() => onGoruntule(fatura)}
+          title="Faturayı görüntüle"
+        >
+          👁 Görüntüle
+        </button>
       </span>
     </li>
   )
