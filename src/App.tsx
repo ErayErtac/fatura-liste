@@ -3,6 +3,7 @@ import InvoiceRow from './components/InvoiceRow'
 import InvoiceDetailModal from './components/InvoiceDetailModal'
 import FilterForm from './components/FilterForm'
 import { bosFiltre } from './components/filterDefaults'
+import SummaryCards from './components/SummaryCards'
 import type { FilterValues } from './components/FilterForm'
 import type { Invoice } from './models/invoice'
 import { faturalariGetir } from './api/resources/invoice'
@@ -120,6 +121,8 @@ function App() {
       <h1>Fatura Listesi</h1>
 
       <FilterForm musteriler={musteriler} onFiltrele={filtreUygula} />
+
+      <SummaryCards faturalar={gorunenFaturalar} />
 
       {sayfadakiFaturalar.length === 0 ? (
         <p className={styles.durumMesaji}>Kriterlere uyan fatura bulunamadı.</p>
