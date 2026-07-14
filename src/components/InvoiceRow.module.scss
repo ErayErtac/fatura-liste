@@ -1,0 +1,29 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  list-style: none;
+}
+
+.status {
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.paid {
+  background-color: #d4f7d4;
+  color: #1a7a1a;
+}
+
+.pending {
+  background-color: #fff3cd;
+  color: #8a6d00;
+}
+
+.overdue {
+  background-color: #fde2e2;
+  color: #b02a2a;
+}

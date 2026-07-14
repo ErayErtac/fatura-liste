@@ -1,14 +1,11 @@
 import { useState } from 'react'
 import InvoiceRow from './components/InvoiceRow'
 import type { Invoice } from './models/invoice'
+import { mockInvoices } from './data/mockInvoices'
 import './App.css'
 
 function App() {
-  const [faturalar] = useState<Invoice[]>([
-    { id: 'FTR-2026-0001', musteri: 'Ege Elektronik', tutar: 1500, odendiMi: false },
-    { id: 'FTR-2026-0002', musteri: 'Kaya Otomotiv', tutar: 3200, odendiMi: true },
-    { id: 'FTR-2026-0003', musteri: 'Mavi Lojistik A.Ş.', tutar: 890, odendiMi: false },
-  ])
+  const [faturalar] = useState<Invoice[]>(mockInvoices)
 
   return (
     <div>
