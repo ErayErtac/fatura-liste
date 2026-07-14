@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import InvoiceRow from './components/InvoiceRow'
 import InvoiceDetailModal from './components/InvoiceDetailModal'
-import FilterForm, { bosFiltre } from './components/FilterForm'
+import FilterForm from './components/FilterForm'
+import { bosFiltre } from './components/filterDefaults'
 import type { FilterValues } from './components/FilterForm'
 import type { Invoice } from './models/invoice'
 import { faturalariGetir } from './api/resources/invoice'
@@ -30,7 +31,7 @@ function App() {
         setHata(null)
         const veri = await faturalariGetir()
         setFaturalar(veri)
-      } catch (err) {
+      } catch {
         setHata('Faturalar yüklenirken bir hata oluştu. json-server çalışıyor mu?')
       } finally {
         setYukleniyor(false)

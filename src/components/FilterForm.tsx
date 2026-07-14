@@ -1,3 +1,4 @@
+import { bosFiltre } from './filterDefaults'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import Select from 'react-select'
@@ -17,15 +18,6 @@ export interface FilterValues {
 interface FilterFormProps {
   musteriler: string[]
   onFiltrele: (degerler: FilterValues) => void
-}
-
-export const bosFiltre: FilterValues = {
-  baslangicTarihi: null,
-  bitisTarihi: null,
-  musteri: '',
-  durum: '',
-  tip: '',
-  aramaMetni: '',
 }
 
 const dogrulamaSemasi = Yup.object({
