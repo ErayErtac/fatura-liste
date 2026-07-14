@@ -11,4 +11,9 @@
   background-color: #f5f5f5;
   border-bottom: 2px solid #ccc;
   list-style: none;
+
+  span {
+    cursor: pointer;
+    user-select: none;
+  }
 }
