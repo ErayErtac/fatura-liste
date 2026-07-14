@@ -9,6 +9,25 @@ interface InvoiceDetailModalProps {
 }
 
 function InvoiceDetailModal({ fatura, onClose }: InvoiceDetailModalProps) {
+  if (!fatura) {
+    return (
+      <Modal
+        isOpen={false}
+        onRequestClose={onClose}
+        ariaHideApp={false}
+        overlayClassName={styles.overlay}
+        className={styles.content}
+      >
+        <div />
+      </Modal>
+    )
+  }
+
+  const durumClass =
+    fatura.durum === 'Ödendi' ? styles.paid :
+    fatura.durum === 'Gecikmiş' ? styles.overdue :
+    styles.pending
+
   return (
     <Modal
       isOpen={fatura !== null}
@@ -18,10 +37,19 @@ function InvoiceDetailModal({ fatura, onClose }: InvoiceDetailModalProps) {
       overlayClassName={styles.overlay}
       className={styles.content}
     >
-      {fatura && (
+      <div className={styles.header}>
         <div>
-          <h2 className={styles.title}>{fatura.faturaNo}</h2>
+          <div className={styles.companyName}>Önizleme</div>
+          <div className={styles.companyTagline}>Fatura Detayı</div>
+        </div>
+        <div className={styles.invoiceNo}>
+          <div className={styles.invoiceLabel}>Fatura No</div>
+          {fatura.faturaNo}
+        </div>
+      </div>
 
+      <div className={styles.body}>
+        <div className={styles.section}>
           <div className={styles.row}>
             <span className={styles.label}>Müşteri</span>
             <span className={styles.value}>{fatura.musteri}</span>
@@ -35,23 +63,28 @@ function InvoiceDetailModal({ fatura, onClose }: InvoiceDetailModalProps) {
             <span className={styles.value}>{tarihFormatla(fatura.vadeTarihi)}</span>
           </div>
           <div className={styles.row}>
-            <span className={styles.label}>Tutar</span>
-            <span className={styles.value}>{paraFormatla(fatura.tutar)}</span>
-          </div>
-          <div className={styles.row}>
-            <span className={styles.label}>Tip</span>
+            <span className={styles.label}>Fatura Tipi</span>
             <span className={styles.value}>{fatura.tip}</span>
           </div>
           <div className={styles.row}>
             <span className={styles.label}>Durum</span>
-            <span className={styles.value}>{fatura.durum}</span>
+            <span className={`${styles.statusBadge} ${durumClass}`}>{fatura.durum}</span>
           </div>
-
-          <button className={styles.closeButton} onClick={onClose}>
-            Kapat
-          </button>
         </div>
-      )}
+
+        <hr className={styles.divider} />
+
+        <div className={styles.totalRow}>
+          <span className={styles.totalLabel}>Toplam</span>
+          <span className={styles.totalValue}>{paraFormatla(fatura.tutar)}</span>
+        </div>
+      </div>
+
+      <div className={styles.footer}>
+        <button className={styles.closeButton} onClick={onClose}>
+          Kapat
+        </button>
+      </div>
     </Modal>
   )
 }
