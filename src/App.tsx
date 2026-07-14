@@ -124,21 +124,27 @@ function App() {
       {sayfadakiFaturalar.length === 0 ? (
         <p className={styles.durumMesaji}>Kriterlere uyan fatura bulunamadı.</p>
       ) : (
-        <ul className={styles.list}>
-          <li className={styles.headerRow}>
-            <span onClick={() => kolonaTikla('faturaNo')}>Fatura No{okIsareti('faturaNo')}</span>
-            <span onClick={() => kolonaTikla('musteri')}>Müşteri{okIsareti('musteri')}</span>
-            <span onClick={() => kolonaTikla('duzenlemeTarihi')}>Düzenleme Tarihi{okIsareti('duzenlemeTarihi')}</span>
-            <span onClick={() => kolonaTikla('vadeTarihi')}>Vade Tarihi{okIsareti('vadeTarihi')}</span>
-            <span onClick={() => kolonaTikla('tutar')}>Tutar{okIsareti('tutar')}</span>
-            <span>Tip</span>
-            <span>Durum</span>
-            <span>İşlem</span>
-          </li>
-          {sayfadakiFaturalar.map((fatura) => (
-            <InvoiceRow key={fatura.id} fatura={fatura} onGoruntule={setSeciliFatura} />
-          ))}
-        </ul>
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th onClick={() => kolonaTikla('faturaNo')}>Fatura No{okIsareti('faturaNo')}</th>
+                <th onClick={() => kolonaTikla('musteri')}>Müşteri{okIsareti('musteri')}</th>
+                <th onClick={() => kolonaTikla('duzenlemeTarihi')}>Düzenleme Tarihi{okIsareti('duzenlemeTarihi')}</th>
+                <th onClick={() => kolonaTikla('vadeTarihi')}>Vade Tarihi{okIsareti('vadeTarihi')}</th>
+                <th onClick={() => kolonaTikla('tutar')}>Tutar{okIsareti('tutar')}</th>
+                <th>Tip</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sayfadakiFaturalar.map((fatura) => (
+                <InvoiceRow key={fatura.id} fatura={fatura} onGoruntule={setSeciliFatura} />
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
 
       <div className={styles.pagination}>

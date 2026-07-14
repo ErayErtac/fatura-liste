@@ -1,16 +1,25 @@
 .row {
-  display: grid;
-  grid-template-columns: 130px 180px 120px 120px 120px 80px 100px 140px;
-  padding: 8px 12px;
-  border-bottom: 1px solid #e0e0e0;
-  list-style: none;
+  &:hover {
+    background-color: #fafafa;
+  }
+}
+
+.faturaNo {
+  font-weight: 600;
+  color: #2a5db0;
+}
+
+.tutar {
+  font-weight: 600;
+  text-align: right;
 }
 
 .status {
-  padding: 2px 10px;
+  padding: 3px 12px;
   border-radius: 12px;
   font-size: 0.85rem;
   font-weight: 600;
+  display: inline-block;
 }
 
 .paid {

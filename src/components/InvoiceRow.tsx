@@ -14,17 +14,17 @@ function InvoiceRow({ fatura, onGoruntule }: InvoiceRowProps) {
     styles.pending
 
   return (
-    <li className={styles.row}>
-      <span>{fatura.faturaNo}</span>
-      <span>{fatura.musteri}</span>
-      <span>{tarihFormatla(fatura.duzenlemeTarihi)}</span>
-      <span>{tarihFormatla(fatura.vadeTarihi)}</span>
-      <span>{paraFormatla(fatura.tutar)}</span>
-      <span>{fatura.tip}</span>
-      <span className={durumClass}>
-        <span className={styles.status}>{fatura.durum}</span>
-      </span>
-      <span>
+    <tr className={styles.row}>
+      <td className={styles.faturaNo}>{fatura.faturaNo}</td>
+      <td>{fatura.musteri}</td>
+      <td>{tarihFormatla(fatura.duzenlemeTarihi)}</td>
+      <td>{tarihFormatla(fatura.vadeTarihi)}</td>
+      <td className={styles.tutar}>{paraFormatla(fatura.tutar)}</td>
+      <td>{fatura.tip}</td>
+      <td>
+        <span className={`${styles.status} ${durumClass}`}>{fatura.durum}</span>
+      </td>
+      <td>
         <button
           type="button"
           className={styles.viewButton}
@@ -33,8 +33,8 @@ function InvoiceRow({ fatura, onGoruntule }: InvoiceRowProps) {
         >
           👁 Görüntüle
         </button>
-      </span>
-    </li>
+      </td>
+    </tr>
   )
 }
 

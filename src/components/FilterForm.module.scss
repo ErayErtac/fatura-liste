@@ -3,21 +3,37 @@
   flex-wrap: wrap;
   gap: 16px;
   align-items: flex-end;
-  padding: 12px;
-  background-color: #fafafa;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  padding: 16px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  min-width: 160px;
+  gap: 6px;
+  min-width: 170px;
 
   label {
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1e3a6e;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  input {
+    border: 1px solid #d0d9ef;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+
+    &:focus {
+      outline: none;
+      border-color: #1e3a6e;
+    }
   }
 }
 
@@ -29,4 +45,30 @@
 .buttons {
   display: flex;
   gap: 8px;
+
+  button {
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 9px 18px;
+    font-weight: 600;
+    border: 1px solid #1e3a6e;
+  }
+
+  button[type='submit'] {
+    background-color: #1e3a6e;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #16294f;
+    }
+  }
+
+  button[type='button'] {
+    background-color: #ffffff;
+    color: #1e3a6e;
+
+    &:hover {
+      background-color: #eef2fb;
+    }
+  }
 }
