@@ -2,11 +2,12 @@ import { useEffect, useMemo, useState } from 'react'
 import InvoiceRow from './components/InvoiceRow'
 import InvoiceDetailModal from './components/InvoiceDetailModal'
 import FilterForm from './components/FilterForm'
-import { bosFiltre } from './components/filterDefaults'
 import SummaryCards from './components/SummaryCards'
+import { bosFiltre } from './components/filterDefaults'
 import type { FilterValues } from './components/FilterForm'
 import type { Invoice } from './models/invoice'
-import { faturalariGetir } from './api/resources/invoice'
+import { useAppDispatch, useAppSelector } from './store/hook'
+import { faturalariYukle } from './store/invoice/invoiceSlice'
 import styles from './App.module.scss'
 import './App.css'
 
@@ -14,9 +15,10 @@ type SiralamaAlani = keyof Pick<Invoice, 'faturaNo' | 'musteri' | 'tutar' | 'duz
 type SiralamaYonu = 'asc' | 'desc'
 
 function App() {
-  const [faturalar, setFaturalar] = useState<Invoice[]>([])
-  const [yukleniyor, setYukleniyor] = useState(true)
-  const [hata, setHata] = useState<string | null>(null)
+  const dispatch = useAppDispatch()
+  const faturalar = useAppSelector((state) => state.invoice.liste)
+  const yukleniyor = useAppSelector((state) => state.invoice.yukleniyor)
+  const hata = useAppSelector((state) => state.invoice.hata)
 
   const [filtre, setFiltre] = useState<FilterValues>(bosFiltre)
   const [siralamaAlani, setSiralamaAlani] = useState<SiralamaAlani>('faturaNo')
@@ -26,21 +28,8 @@ function App() {
   const [seciliFatura, setSeciliFatura] = useState<Invoice | null>(null)
 
   useEffect(() => {
-    async function veriyiYukle() {
-      try {
-        setYukleniyor(true)
-        setHata(null)
-        const veri = await faturalariGetir()
-        setFaturalar(veri)
-      } catch {
-        setHata('Faturalar yüklenirken bir hata oluştu. json-server çalışıyor mu?')
-      } finally {
-        setYukleniyor(false)
-      }
-    }
-
-    veriyiYukle()
-  }, [])
+    dispatch(faturalariYukle())
+  }, [dispatch])
 
   const musteriler = useMemo(() => {
     const benzersiz = new Set(faturalar.map((f) => f.musteri))
