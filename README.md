@@ -1,75 +1,78 @@
-# React + TypeScript + Vite
+# Fatura Listesi — Stajyer Oryantasyon Projesi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PreAccounting Client projesindeki teknoloji yığınını ve kod kalıplarını öğrenmek amacıyla sıfırdan geliştirilen bir fatura liste ekranı. Mock veri + sahte API (json-server) ile çalışır.
 
-Currently, two official plugins are available:
+## Teknoloji Yığını
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dil / Derleyici:** TypeScript 5 + Vite 5
+- **UI:** React 18 (fonksiyonel bileşen + hook)
+- **State:** Redux Toolkit + typed hooks
+- **Stil:** SCSS Modules
+- **Form:** Formik + Yup
+- **UI bileşenleri:** react-select, react-datepicker, react-modal
+- **HTTP:** axios (sarmalayıcı ile)
+- **Sahte API:** json-server
+- **Kalite:** ESLint
 
-## React Compiler
+## Özellikler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Filtre paneli: tarih aralığı, müşteri, durum, tip, serbest metin arama
+- Kolon başlığına tıklayınca artan/azalan sıralama
+- Sayfalama (10 / 25 / 50 kayıt seçenekli)
+- Fatura detay modalı
+- Özet kartları: toplam fatura adedi, toplam tutar, geciken tutar
+- TR para/tarih formatı
+- Yükleniyor, hata ve boş liste durumları
 
-## Expanding the ESLint configuration
+## Kurulum
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Mock Veriyi Oluşturma
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+`db.json` dosyası projeye dahil değilse (ya da yeniden oluşturmak istersen):
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+node src/data/generateDb.cjs
 
-```
+## Çalıştırma
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Hem sahte API'yi (json-server, port 3001) hem Vite dev server'ını (port 5173) aynı anda başlatır:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+npm run dev:all
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Sadece frontend'i çalıştırmak için:
 
-```
+npm run dev
+
+Sadece sahte API'yi çalıştırmak için:
+
+npm run api
+
+## Klasör Yapısı
+
+    src/
+      api/
+        http.ts               axios sarmalayıcısı
+        resources/invoice.ts  fatura API çağrıları
+      components/
+        InvoiceRow.tsx / .module.scss
+        InvoiceDetailModal.tsx / .module.scss
+        FilterForm.tsx / .module.scss
+        SummaryCards.tsx / .module.scss
+        filterDefaults.ts
+      data/
+        mockInvoices.ts        mock veri üretimi (uygulama içi kullanım)
+        generateDb.cjs         db.json üretim script'i (json-server için)
+      models/
+        invoice.ts              Invoice tipi ve union tipler
+      store/
+        store.ts / hook.ts
+        invoice/invoiceSlice.ts
+      utils/
+        format.ts               TR para/tarih formatlama
+      App.tsx / App.module.scss / App.css
+
+## Notlar
+
+- Filtre/sıralama/sayfalama state'i bileşen içinde (`useState`) tutulur; sunucudan gelen fatura listesi Redux store'da tutulur.
+- Mock veri 120 kayıt içerir, `db.json` üzerinden json-server ile servis edilir.
