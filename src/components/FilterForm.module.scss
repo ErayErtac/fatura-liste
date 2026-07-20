@@ -19,20 +19,20 @@
   label {
     font-size: 0.78rem;
     font-weight: 700;
-    color: #1e3a6e;
+    color: #306D29;
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
 
   input {
-    border: 1px solid #d0d9ef;
+    border: 1px solid #E7E1B1;
     border-radius: 6px;
     padding: 8px 10px;
     font-size: 0.9rem;
 
     &:focus {
       outline: none;
-      border-color: #1e3a6e;
+      border-color: #0D530E;
     }
   }
 }
@@ -51,24 +51,24 @@
     border-radius: 6px;
     padding: 9px 18px;
     font-weight: 600;
-    border: 1px solid #1e3a6e;
+    border: 1px solid #306D29;
   }
 
   button[type='submit'] {
-    background-color: #1e3a6e;
+    background-color: #306D29;
     color: #ffffff;
 
     &:hover {
-      background-color: #16294f;
+      background-color: #0D530E;
     }
   }
 
   button[type='button'] {
     background-color: #ffffff;
-    color: #1e3a6e;
+    color: #306D29;
 
     &:hover {
-      background-color: #eef2fb;
+      background-color: #E7E1B1;
     }
   }
 }

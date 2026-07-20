@@ -17,15 +17,15 @@
   }
 
   thead th {
-    background-color: #1e3a6e;
+    background-color: #306D29;
     color: #ffffff;
     font-weight: 700;
     cursor: pointer;
     user-select: none;
-    border-bottom: 2px solid #16294f;
+    border-bottom: 2px solid #0D530E;
 
     &:hover {
-      background-color: #16294f;
+      background-color: #0D530E;
     }
   }
 }
@@ -47,15 +47,15 @@
 
   button {
     cursor: pointer;
-    border: 1px solid #1e3a6e;
+    border: 1px solid #306D29;
     background-color: #ffffff;
-    color: #1e3a6e;
+    color: #306D29;
     border-radius: 6px;
     padding: 6px 14px;
     font-weight: 600;
 
     &:hover:not(:disabled) {
-      background-color: #1e3a6e;
+      background-color: #306D29;
       color: #ffffff;
     }
 
@@ -67,7 +67,7 @@
 
   select {
     margin-left: auto;
-    border: 1px solid #ccc;
+    border: 1px solid #E7E1B1;
     border-radius: 6px;
     padding: 6px 10px;
     background-color: #fff;

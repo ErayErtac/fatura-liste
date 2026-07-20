@@ -18,7 +18,7 @@ function faturaUret(index: number): Invoice {
 
   return {
     id: `inv-${index}`,
-    faturaNo: `FTR-2026-${String(index).padStart(4, '0')}`,
+    faturaNo: `FTR2026${String(index).padStart(4, '0')}`,
     musteri: musteriler[index % musteriler.length],
     duzenlemeTarihi: rastgeleTarih(2026, 200),
     vadeTarihi: rastgeleTarih(2026, 250),

@@ -1,7 +1,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(20, 30, 50, 0.55);
+  background-color: rgba(20, 20, 20, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@
 }
 
 .header {
-  background-color: #1e3a6e;
+  background-color: #0D530E;
   color: #ffffff;
   padding: 20px 28px;
   display: flex;
@@ -99,7 +99,7 @@
 .totalValue {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e3a6e;
+  color: #0D530E;
 }
 
 .statusBadge {
@@ -133,14 +133,14 @@
 .closeButton {
   width: 100%;
   cursor: pointer;
-  border: 1px solid #1e3a6e;
+  border: 1px solid #306D29;
   background-color: #ffffff;
-  color: #1e3a6e;
+  color: #306D29;
   border-radius: 4px;
   padding: 10px;
   font-weight: 700;
 
   &:hover {
-    background-color: #eef2fb;
+    background-color: #E7E1B1;
   }
 }

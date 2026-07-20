@@ -1,12 +1,12 @@
 .row {
   &:hover {
-    background-color: #fafafa;
+    background-color: #FBF5DD;
   }
 }
 
 .faturaNo {
   font-weight: 600;
-  color: #2a5db0;
+  color: #306D29;
 }
 
 .tutar {
@@ -39,13 +39,14 @@
 
 .viewButton {
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid #306D29;
   background-color: #fff;
   border-radius: 6px;
   padding: 4px 10px;
   font-size: 0.85rem;
+  color: #306D29;
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: #E7E1B1;
   }
 }
