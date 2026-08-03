@@ -1,3 +1,52 @@
+.baslikForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 200px;
+
+  label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #306D29;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+}
+
+.error {
+  color: #b02a2a;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+.kaydetButon {
+  cursor: pointer;
+  border: none;
+  background-color: #306D29;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 16px;
+
+  &:hover:not(:disabled) {
+    background-color: #0D530E;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
 .form {
   max-width: 900px;
 }

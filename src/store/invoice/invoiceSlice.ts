@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { Invoice } from '../../models/invoice'
-import { faturalariGetir } from '../../api/resources/invoice'
+import { faturalariGetir, faturaOlustur } from '../../api/resources/invoice'
 
 interface InvoiceState {
   liste: Invoice[]
@@ -17,6 +17,11 @@ const baslangicState: InvoiceState = {
 export const faturalariYukle = createAsyncThunk('invoice/faturalariYukle', async () => {
   const veri = await faturalariGetir()
   return veri
+})
+
+export const faturaEkle = createAsyncThunk('invoice/faturaEkle', async (fatura: Invoice) => {
+  const eklenenFatura = await faturaOlustur(fatura)
+  return eklenenFatura
 })
 
 const invoiceSlice = createSlice({
@@ -36,6 +41,9 @@ const invoiceSlice = createSlice({
       .addCase(faturalariYukle.rejected, (state) => {
         state.yukleniyor = false
         state.hata = 'Faturalar yüklenirken bir hata oluştu. json-server çalışıyor mu?'
+      })
+      .addCase(faturaEkle.fulfilled, (state, action) => {
+        state.liste.unshift(action.payload)
       })
   },
 })

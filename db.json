@@ -1199,6 +1199,31 @@
       "tutar": 77005.26,
       "tip": "Satış",
       "durum": "Ödendi"
+    },
+    {
+      "id": "RqqWYE6nvqs",
+      "faturaNo": "FTR20260121",
+      "musteri": "Aksa Gıda San. A.Ş.",
+      "duzenlemeTarihi": "2026-08-02",
+      "vadeTarihi": "2026-08-07",
+      "tutar": 300,
+      "tip": "Alış",
+      "durum": "Bekliyor",
+      "kalemler": [
+        {
+          "id": "kalem-0",
+          "aciklama": "asdas",
+          "miktar": 1,
+          "birimFiyat": 100
+        },
+        {
+          "id": "kalem-1",
+          "aciklama": "sdfsd",
+          "miktar": 1,
+          "birimFiyat": 200
+        }
+      ]
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

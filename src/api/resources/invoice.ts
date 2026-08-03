@@ -5,3 +5,8 @@ export async function faturalariGetir(): Promise<Invoice[]> {
   const yanit = await http.get<Invoice[]>('/invoices')
   return yanit.data
 }
+
+export async function faturaOlustur(fatura: Invoice): Promise<Invoice> {
+  const yanit = await http.post<Invoice>('/invoices', fatura)
+  return yanit.data
+}
