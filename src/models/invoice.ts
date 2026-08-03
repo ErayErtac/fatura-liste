@@ -10,6 +10,7 @@ export interface Invoice {
   tutar: number
   tip: FaturaTipi
   durum: FaturaDurumu
+  kalemler?: FaturaKalemi[]
 }
 
 export interface FaturaKalemi {
