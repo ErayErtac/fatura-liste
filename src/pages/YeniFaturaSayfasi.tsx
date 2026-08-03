@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Formik, Form, FieldArray } from 'formik'
 import type { FaturaKalemi } from '../models/invoice'
+import { paraFormatla } from '../utils/format'
 import styles from './YeniFaturaSayfasi.module.scss'
 
 interface YeniFaturaFormValues {
@@ -9,6 +10,10 @@ interface YeniFaturaFormValues {
 
 function bosKalem(id: string): FaturaKalemi {
   return { id, aciklama: '', miktar: 1, birimFiyat: 0 }
+}
+
+function genelToplamHesapla(kalemler: FaturaKalemi[]): number {
+  return kalemler.reduce((toplam, kalem) => toplam + kalem.miktar * kalem.birimFiyat, 0)
 }
 
 function YeniFaturaSayfasi() {
@@ -42,6 +47,7 @@ function YeniFaturaSayfasi() {
                     <span>Açıklama</span>
                     <span>Miktar</span>
                     <span>Birim Fiyat</span>
+                    <span>Tutar</span>
                     <span></span>
                   </div>
 
@@ -65,6 +71,9 @@ function YeniFaturaSayfasi() {
                         value={kalem.birimFiyat}
                         onChange={(e) => setFieldValue(`kalemler.${index}.birimFiyat`, Number(e.target.value))}
                       />
+                      <span className={styles.satirTutari}>
+                        {paraFormatla(kalem.miktar * kalem.birimFiyat)}
+                      </span>
                       <button
                         type="button"
                         onClick={() => remove(index)}
@@ -85,6 +94,13 @@ function YeniFaturaSayfasi() {
                 </div>
               )}
             </FieldArray>
+
+            <div className={styles.genelToplam}>
+              <span>Genel Toplam</span>
+              <span className={styles.genelToplamTutar}>
+                {paraFormatla(genelToplamHesapla(values.kalemler))}
+              </span>
+            </div>
           </Form>
         )}
       </Formik>

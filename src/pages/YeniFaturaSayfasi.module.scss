@@ -11,7 +11,7 @@
 
 .kalemBaslik {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 80px;
+  grid-template-columns: 3fr 1fr 1fr 1fr 80px;
   gap: 12px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -24,8 +24,9 @@
 
 .kalemSatiri {
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 80px;
+  grid-template-columns: 3fr 1fr 1fr 1fr 80px;
   gap: 12px;
+  align-items: center;
   margin-bottom: 10px;
 
   input {
@@ -67,4 +68,33 @@
   &:hover {
     background-color: #FBF5DD;
   }
+}
+
+.satirTutari {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.genelToplam {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+
+  span:first-child {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1e3a6e;
+    letter-spacing: 0.03em;
+  }
+}
+
+.genelToplamTutar {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0D530E;
 }
