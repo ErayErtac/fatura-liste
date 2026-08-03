@@ -11,3 +11,10 @@ export interface Invoice {
   tip: FaturaTipi
   durum: FaturaDurumu
 }
+
+export interface FaturaKalemi {
+  id: string
+  aciklama: string
+  miktar: number
+  birimFiyat: number
+}

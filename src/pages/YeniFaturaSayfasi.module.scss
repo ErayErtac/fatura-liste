@@ -1,0 +1,70 @@
+.form {
+  max-width: 900px;
+}
+
+.kalemler {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.kalemBaslik {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 80px;
+  gap: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #306D29;
+  text-transform: uppercase;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #E7E1B1;
+  margin-bottom: 10px;
+}
+
+.kalemSatiri {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 80px;
+  gap: 12px;
+  margin-bottom: 10px;
+
+  input {
+    border: 1px solid #E7E1B1;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+
+    &:focus {
+      outline: none;
+      border-color: #0D530E;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    border: 1px solid #b02a2a;
+    background-color: #ffffff;
+    color: #b02a2a;
+    border-radius: 6px;
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.satirEkleButon {
+  cursor: pointer;
+  border: 1px solid #306D29;
+  background-color: #ffffff;
+  color: #306D29;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  margin-top: 4px;
+
+  &:hover {
+    background-color: #FBF5DD;
+  }
+}
