@@ -17,3 +17,13 @@
     background-color: #FBF5DD;
   }
 }
+
+.navLinkActive {
+  background-color: #306D29;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #0D530E;
+    color: #ffffff;
+  }
+}

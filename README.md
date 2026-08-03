@@ -23,6 +23,8 @@ PreAccounting Client projesindeki teknoloji yığınını ve kod kalıplarını 
 - Özet kartları: toplam fatura adedi, toplam tutar, geciken tutar
 - TR para/tarih formatı
 - Yükleniyor, hata ve boş liste durumları
+- Yeni fatura oluşturma: kalem bazlı (ürün/hizmet satırları), otomatik toplam hesaplama, Yup doğrulama, API'ye kayıt
+- React Router ile iki sayfa arası gezinme (Fatura Listesi / Yeni Fatura)
 
 ## Kurulum
 

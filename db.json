@@ -1223,6 +1223,48 @@
           "birimFiyat": 200
         }
       ]
+    },
+    {
+      "id": "31NRAstIGwQ",
+      "faturaNo": "FTR20260122",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-08-02",
+      "vadeTarihi": "2026-08-06",
+      "tutar": 690,
+      "tip": "Satış",
+      "durum": "Bekliyor",
+      "kalemler": [
+        {
+          "id": "kalem-0",
+          "aciklama": "qweqwe",
+          "miktar": 1,
+          "birimFiyat": 234
+        },
+        {
+          "id": "kalem-1",
+          "aciklama": "werwer",
+          "miktar": 1,
+          "birimFiyat": 456
+        }
+      ]
+    },
+    {
+      "id": "4J-Bot3w3X8",
+      "faturaNo": "FTR20260123",
+      "musteri": "Demir İnşaat Ltd. Şti.",
+      "duzenlemeTarihi": "2026-08-24",
+      "vadeTarihi": "2026-08-30",
+      "tutar": 10296,
+      "tip": "Alış",
+      "durum": "Bekliyor",
+      "kalemler": [
+        {
+          "id": "kalem-0",
+          "aciklama": "dfgdfdfg",
+          "miktar": 234,
+          "birimFiyat": 44
+        }
+      ]
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

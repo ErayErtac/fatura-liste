@@ -72,6 +72,18 @@ function InvoiceDetailModal({ fatura, onClose }: InvoiceDetailModalProps) {
           </div>
         </div>
 
+        {fatura.kalemler && fatura.kalemler.length > 0 && (
+        <div className={styles.kalemDokumu}>
+          <div className={styles.kalemDokumuBaslik}>Kalemler</div>
+          {fatura.kalemler.map((kalem) => (
+            <div className={styles.kalemDokumuSatiri} key={kalem.id}>
+              <span>{kalem.aciklama}</span>
+              <span>{kalem.miktar} × {paraFormatla(kalem.birimFiyat)}</span>
+            </div>
+          ))}
+        </div>
+        )}
+
         <hr className={styles.divider} />
 
         <div className={styles.totalRow}>

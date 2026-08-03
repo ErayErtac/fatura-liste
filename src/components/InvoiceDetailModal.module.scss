@@ -76,6 +76,27 @@
   color: #1a1a1a;
 }
 
+.kalemDokumu {
+  margin: 10px 0 16px;
+}
+
+.kalemDokumuBaslik {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.kalemDokumuSatiri {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  padding: 4px 0;
+  color: #444;
+}
+
 .divider {
   border: none;
   border-top: 2px solid #1a1a1a;

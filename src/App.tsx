@@ -1,15 +1,20 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { NavLink, Route, Routes } from 'react-router-dom'
 import FaturaListesiSayfasi from './pages/FaturaListesiSayfasi'
 import YeniFaturaSayfasi from './pages/YeniFaturaSayfasi'
 import styles from './App.module.scss'
 import './App.css'
 
+
 function App() {
   return (
     <div>
       <nav className={styles.nav}>
-        <Link to="/" className={styles.navLink}>Fatura Listesi</Link>
-        <Link to="/yeni-fatura" className={styles.navLink}>+ Yeni Fatura</Link>
+        <NavLink to="/" end className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}>
+          Fatura Listesi
+        </NavLink>
+        <NavLink to="/yeni-fatura" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}>
+          + Yeni Fatura
+        </NavLink>
       </nav>
 
       <Routes>

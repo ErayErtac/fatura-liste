@@ -122,6 +122,8 @@ function YeniFaturaSayfasi() {
                   onChange={(tarih: Date | null) => setFieldValue('duzenlemeTarihi', tarih)}
                   dateFormat="dd.MM.yyyy"
                   placeholderText="Seç..."
+                  className={styles.dateInput}
+                  wrapperClassName={styles.dateWrapper}
                 />
                 {errors.duzenlemeTarihi && <span className={styles.error}>{String(errors.duzenlemeTarihi)}</span>}
               </div>
@@ -133,6 +135,8 @@ function YeniFaturaSayfasi() {
                   onChange={(tarih: Date | null) => setFieldValue('vadeTarihi', tarih)}
                   dateFormat="dd.MM.yyyy"
                   placeholderText="Seç..."
+                  className={styles.dateInput}
+                  wrapperClassName={styles.dateWrapper}
                 />
                 {errors.vadeTarihi && <span className={styles.error}>{String(errors.vadeTarihi)}</span>}
               </div>
@@ -172,13 +176,19 @@ function YeniFaturaSayfasi() {
                         type="number"
                         min={1}
                         value={kalem.miktar}
-                        onChange={(e) => setFieldValue(`kalemler.${index}.miktar`, Number(e.target.value))}
+                        onChange={(e) => {
+                          const temiz = e.target.value.replace(/^0+(?=\d)/, '')
+                          setFieldValue(`kalemler.${index}.miktar`, temiz === '' ? 0 : Number(temiz))
+                        }}
                       />
                       <input
                         type="number"
                         min={0}
                         value={kalem.birimFiyat}
-                        onChange={(e) => setFieldValue(`kalemler.${index}.birimFiyat`, Number(e.target.value))}
+                        onChange={(e) => {
+                          const temiz = e.target.value.replace(/^0+(?=\d)/, '')
+                          setFieldValue(`kalemler.${index}.birimFiyat`, temiz === '' ? 0 : Number(temiz))
+                        }}
                       />
                       <span className={styles.satirTutari}>
                         {paraFormatla(kalem.miktar * kalem.birimFiyat)}

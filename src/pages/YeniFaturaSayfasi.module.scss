@@ -20,6 +20,31 @@
   }
 }
 
+.dateWrapper {
+  width: 100%;
+}
+
+.dateInput {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #E7E1B1;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #1a1a1a;
+  background-color: #ffffff;
+
+  &:focus {
+    outline: none;
+    border-color: #0D530E;
+  }
+
+  &::placeholder {
+    color: #999;
+  }
+}
+
 .error {
   color: #b02a2a;
   font-size: 0.75rem;
