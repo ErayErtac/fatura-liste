@@ -151,6 +151,22 @@
   padding: 16px 28px 24px;
 }
 
+.yazdirButon {
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid #306D29;
+  background-color: #ffffff;
+  color: #306D29;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 700;
+  margin-bottom: 8px;
+
+  &:hover {
+    background-color: #E7E1B1;
+  }
+}
+
 .closeButton {
   width: 100%;
   cursor: pointer;
@@ -163,5 +179,30 @@
 
   &:hover {
     background-color: #E7E1B1;
+  }
+}
+
+@media print {
+  :global(body) * {
+    visibility: hidden;
+  }
+
+  .content,
+  .content * {
+    visibility: visible;
+  }
+
+  .content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none;
+    max-width: 100%;
+  }
+
+  .yazdirButon,
+  .closeButton {
+    display: none;
   }
 }

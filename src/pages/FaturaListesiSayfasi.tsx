@@ -9,6 +9,7 @@ import type { FilterValues } from '../components/FilterForm'
 import type { Invoice } from '../models/invoice'
 import { useAppDispatch, useAppSelector } from '../store/hook'
 import { faturalariYukle, faturaKaldir } from '../store/invoice/invoiceSlice'
+import { faturalariExceleAktar } from '../utils/excelAktar'
 import styles from './FaturaListesiSayfasi.module.scss'
 
 type SiralamaAlani = keyof Pick<Invoice, 'faturaNo' | 'musteri' | 'tutar' | 'duzenlemeTarihi' | 'vadeTarihi'>
@@ -144,6 +145,14 @@ function FaturaListesiSayfasi() {
       <FilterForm musteriler={musteriler} onFiltrele={filtreUygula} />
 
       <SummaryCards faturalar={gorunenFaturalar} />
+
+      <button
+        type="button"
+        className={styles.exceleAktarButon}
+        onClick={() => faturalariExceleAktar(gorunenFaturalar)}
+      >
+        📊 Excel'e Aktar
+      </button>
 
       {seciliIdler.length > 0 && (
         <div className={styles.topluIslemCubugu}>

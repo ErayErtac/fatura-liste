@@ -93,6 +93,9 @@ function InvoiceDetailModal({ fatura, onClose }: InvoiceDetailModalProps) {
       </div>
 
       <div className={styles.footer}>
+        <button className={styles.yazdirButon} onClick={() => window.print()}>
+          🖨 Yazdır
+        </button>
         <button className={styles.closeButton} onClick={onClose}>
           Kapat
         </button>
