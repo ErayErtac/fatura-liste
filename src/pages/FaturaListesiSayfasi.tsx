@@ -3,13 +3,13 @@ import InvoiceRow from '../components/InvoiceRow'
 import InvoiceDetailModal from '../components/InvoiceDetailModal'
 import FilterForm from '../components/FilterForm'
 import SummaryCards from '../components/SummaryCards'
+import ConfirmDialog from '../components/ConfirmDialog'
 import { bosFiltre } from '../components/filterDefaults'
 import type { FilterValues } from '../components/FilterForm'
 import type { Invoice } from '../models/invoice'
 import { useAppDispatch, useAppSelector } from '../store/hook'
 import { faturalariYukle, faturaKaldir } from '../store/invoice/invoiceSlice'
 import styles from './FaturaListesiSayfasi.module.scss'
-import ConfirmDialog from '../components/ConfirmDialog'
 
 type SiralamaAlani = keyof Pick<Invoice, 'faturaNo' | 'musteri' | 'tutar' | 'duzenlemeTarihi' | 'vadeTarihi'>
 type SiralamaYonu = 'asc' | 'desc'
@@ -27,6 +27,8 @@ function FaturaListesiSayfasi() {
   const [sayfaBoyutu, setSayfaBoyutu] = useState(10)
   const [seciliFatura, setSeciliFatura] = useState<Invoice | null>(null)
   const [silinecekFatura, setSilinecekFatura] = useState<Invoice | null>(null)
+  const [seciliIdler, setSeciliIdler] = useState<string[]>([])
+  const [topluSilmeOnayAcik, setTopluSilmeOnayAcik] = useState(false)
 
   useEffect(() => {
     dispatch(faturalariYukle())
@@ -99,9 +101,32 @@ function FaturaListesiSayfasi() {
   }
 
   async function silmeyiOnayla() {
-  if (!silinecekFatura) return
-  await dispatch(faturaKaldir(silinecekFatura.id))
-  setSilinecekFatura(null)
+    if (!silinecekFatura) return
+    await dispatch(faturaKaldir(silinecekFatura.id))
+    setSilinecekFatura(null)
+  }
+
+  function secimiDegistir(id: string) {
+    setSeciliIdler((onceki) =>
+      onceki.includes(id) ? onceki.filter((seciliId) => seciliId !== id) : [...onceki, id]
+    )
+  }
+
+  function tumunuSec() {
+    const sayfadakiIdler = sayfadakiFaturalar.map((f) => f.id)
+    const hepsiSeciliMi = sayfadakiIdler.every((id) => seciliIdler.includes(id))
+
+    if (hepsiSeciliMi) {
+      setSeciliIdler((onceki) => onceki.filter((id) => !sayfadakiIdler.includes(id)))
+    } else {
+      setSeciliIdler((onceki) => Array.from(new Set([...onceki, ...sayfadakiIdler])))
+    }
+  }
+
+  async function topluSilmeyiOnayla() {
+    await Promise.all(seciliIdler.map((id) => dispatch(faturaKaldir(id))))
+    setSeciliIdler([])
+    setTopluSilmeOnayAcik(false)
   }
 
   if (yukleniyor) {
@@ -120,6 +145,18 @@ function FaturaListesiSayfasi() {
 
       <SummaryCards faturalar={gorunenFaturalar} />
 
+      {seciliIdler.length > 0 && (
+        <div className={styles.topluIslemCubugu}>
+          <span>{seciliIdler.length} fatura seçildi</span>
+          <button type="button" onClick={() => setTopluSilmeOnayAcik(true)}>
+            Seçilenleri Sil
+          </button>
+          <button type="button" onClick={() => setSeciliIdler([])}>
+            Seçimi Temizle
+          </button>
+        </div>
+      )}
+
       {sayfadakiFaturalar.length === 0 ? (
         <p className={styles.durumMesaji}>Kriterlere uyan fatura bulunamadı.</p>
       ) : (
@@ -127,6 +164,13 @@ function FaturaListesiSayfasi() {
           <table className={styles.table}>
             <thead>
               <tr>
+                <th>
+                  <input
+                    type="checkbox"
+                    checked={sayfadakiFaturalar.length > 0 && sayfadakiFaturalar.every((f) => seciliIdler.includes(f.id))}
+                    onChange={tumunuSec}
+                  />
+                </th>
                 <th onClick={() => kolonaTikla('faturaNo')}>Fatura No{okIsareti('faturaNo')}</th>
                 <th onClick={() => kolonaTikla('musteri')}>Müşteri{okIsareti('musteri')}</th>
                 <th onClick={() => kolonaTikla('duzenlemeTarihi')}>Düzenleme Tarihi{okIsareti('duzenlemeTarihi')}</th>
@@ -144,6 +188,8 @@ function FaturaListesiSayfasi() {
                   fatura={fatura}
                   onGoruntule={setSeciliFatura}
                   onSilmeTalebi={setSilinecekFatura}
+                  secili={seciliIdler.includes(fatura.id)}
+                  onSecimDegistir={secimiDegistir}
                 />
               ))}
             </tbody>
@@ -170,13 +216,22 @@ function FaturaListesiSayfasi() {
       </div>
 
       <InvoiceDetailModal fatura={seciliFatura} onClose={() => setSeciliFatura(null)} />
+
       <ConfirmDialog
         acikMi={silinecekFatura !== null}
         baslik="Faturayı Sil"
         mesaj={silinecekFatura ? `"${silinecekFatura.faturaNo}" numaralı faturayı silmek istediğinize emin misiniz?` : ''}
         onOnayla={silmeyiOnayla}
         onVazgec={() => setSilinecekFatura(null)}
-      />  
+      />
+
+      <ConfirmDialog
+        acikMi={topluSilmeOnayAcik}
+        baslik="Seçili Faturaları Sil"
+        mesaj={`${seciliIdler.length} faturayı silmek istediğinize emin misiniz? Bu işlem geri alınamaz.`}
+        onOnayla={topluSilmeyiOnayla}
+        onVazgec={() => setTopluSilmeOnayAcik(false)}
+      />
     </div>
   )
 }

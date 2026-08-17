@@ -7,9 +7,11 @@ interface InvoiceRowProps {
   fatura: Invoice
   onGoruntule: (fatura: Invoice) => void
   onSilmeTalebi: (fatura: Invoice) => void
+  secili: boolean
+  onSecimDegistir: (id: string) => void
 }
 
-function InvoiceRow({ fatura, onGoruntule, onSilmeTalebi }: InvoiceRowProps) {
+function InvoiceRow({ fatura, onGoruntule, onSilmeTalebi, secili, onSecimDegistir }: InvoiceRowProps) {
   const durumClass =
     fatura.durum === 'Ödendi' ? styles.paid :
     fatura.durum === 'Gecikmiş' ? styles.overdue :
@@ -17,6 +19,13 @@ function InvoiceRow({ fatura, onGoruntule, onSilmeTalebi }: InvoiceRowProps) {
 
   return (
     <tr className={styles.row}>
+      <td>
+        <input
+          type="checkbox"
+          checked={secili}
+          onChange={() => onSecimDegistir(fatura.id)}
+        />
+      </td>
       <td className={styles.faturaNo}>{fatura.faturaNo}</td>
       <td>{fatura.musteri}</td>
       <td>{tarihFormatla(fatura.duzenlemeTarihi)}</td>
