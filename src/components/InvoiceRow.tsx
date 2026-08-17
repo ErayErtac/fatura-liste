@@ -1,6 +1,7 @@
 import type { Invoice } from '../models/invoice'
 import { paraFormatla, tarihFormatla } from '../utils/format'
 import styles from './InvoiceRow.module.scss'
+import { Link } from 'react-router-dom'
 
 interface InvoiceRowProps {
   fatura: Invoice
@@ -24,7 +25,7 @@ function InvoiceRow({ fatura, onGoruntule }: InvoiceRowProps) {
       <td>
         <span className={`${styles.status} ${durumClass}`}>{fatura.durum}</span>
       </td>
-      <td>
+      <td className={styles.islemHucresi}>
         <button
           type="button"
           className={styles.viewButton}
@@ -33,6 +34,9 @@ function InvoiceRow({ fatura, onGoruntule }: InvoiceRowProps) {
         >
           👁 Görüntüle
         </button>
+        <Link to={`/fatura-duzenle/${fatura.id}`} className={styles.editButton} title="Faturayı düzenle">
+          ✎ Düzenle
+        </Link>
       </td>
     </tr>
   )

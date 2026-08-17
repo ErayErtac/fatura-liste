@@ -6,9 +6,23 @@
       "musteri": "Kaya Otomotiv",
       "duzenlemeTarihi": "2026-01-05",
       "vadeTarihi": "2026-08-08",
-      "tutar": 80690.51,
+      "tutar": 90690,
       "tip": "Alış",
-      "durum": "Bekliyor"
+      "durum": "Bekliyor",
+      "kalemler": [
+        {
+          "id": "kalem-0",
+          "aciklama": "Genel",
+          "miktar": 1,
+          "birimFiyat": 80690
+        },
+        {
+          "id": "kalem-1",
+          "aciklama": "Genel2",
+          "miktar": 1,
+          "birimFiyat": 10000
+        }
+      ]
     },
     {
       "id": "inv-2",

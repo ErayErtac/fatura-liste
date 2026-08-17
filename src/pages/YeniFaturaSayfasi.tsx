@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Formik, Form, FieldArray } from 'formik'
 import * as Yup from 'yup'
 import Select from 'react-select'
@@ -8,7 +8,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import type { FaturaKalemi, FaturaTipi, Invoice } from '../models/invoice'
 import { paraFormatla } from '../utils/format'
 import { useAppDispatch, useAppSelector } from '../store/hook'
-import { faturaEkle } from '../store/invoice/invoiceSlice'
+import { faturaEkle, faturaDuzenle } from '../store/invoice/invoiceSlice'
 import styles from './YeniFaturaSayfasi.module.scss'
 
 interface YeniFaturaFormValues {
@@ -49,8 +49,18 @@ const dogrulamaSemasi = Yup.object({
 function YeniFaturaSayfasi() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const { id } = useParams<{ id: string }>()
+  const duzenlemeModu = Boolean(id)
+
   const faturalar = useAppSelector((state) => state.invoice.liste)
+  const duzenlenenFatura = duzenlemeModu ? faturalar.find((f) => f.id === id) : undefined
+
   const kalemSayaci = useRef(0)
+
+  function yeniKalemId() {
+    kalemSayaci.current += 1
+    return `kalem-${kalemSayaci.current}`
+  }
 
   const musteriler = Array.from(new Set(faturalar.map((f) => f.musteri))).sort()
   const musteriSecenekleri = musteriler.map((m) => ({ value: m, label: m }))
@@ -59,41 +69,63 @@ function YeniFaturaSayfasi() {
     { value: 'Alış', label: 'Alış' },
   ]
 
-  function yeniKalemId() {
-    kalemSayaci.current += 1
-    return `kalem-${kalemSayaci.current}`
-  }
+  // Düzenleme modundaysak ve fatura bulunduysa, formu onunla doldur.
+  // Eski (kalemsiz) faturalarda tek bir "Genel" kalem oluşturup mevcut tutarı koruyoruz.
+  const baslangicDegerleri: YeniFaturaFormValues = duzenlenenFatura
+    ? {
+        musteri: duzenlenenFatura.musteri,
+        duzenlemeTarihi: new Date(duzenlenenFatura.duzenlemeTarihi),
+        vadeTarihi: new Date(duzenlenenFatura.vadeTarihi),
+        tip: duzenlenenFatura.tip,
+        kalemler:
+          duzenlenenFatura.kalemler && duzenlenenFatura.kalemler.length > 0
+            ? duzenlenenFatura.kalemler
+            : [{ id: 'kalem-0', aciklama: 'Genel', miktar: 1, birimFiyat: duzenlenenFatura.tutar }],
+      }
+    : {
+        musteri: '',
+        duzenlemeTarihi: null,
+        vadeTarihi: null,
+        tip: '',
+        kalemler: [bosKalem('kalem-0')],
+      }
 
-  const baslangicDegerleri: YeniFaturaFormValues = {
-    musteri: '',
-    duzenlemeTarihi: null,
-    vadeTarihi: null,
-    tip: '',
-    kalemler: [bosKalem('kalem-0')],
+  if (duzenlemeModu && !duzenlenenFatura) {
+    return (
+      <div>
+        <h1>Fatura Bulunamadı</h1>
+        <p>Düzenlemek istediğiniz fatura bulunamadı. Liste yüklenmemiş ya da fatura silinmiş olabilir.</p>
+      </div>
+    )
   }
 
   return (
     <div>
-      <h1>Yeni Fatura</h1>
+      <h1>{duzenlemeModu ? `Fatura Düzenle — ${duzenlenenFatura!.faturaNo}` : 'Yeni Fatura'}</h1>
 
       <Formik
+        enableReinitialize
         initialValues={baslangicDegerleri}
         validationSchema={dogrulamaSemasi}
         onSubmit={async (degerler, { setSubmitting }) => {
-          const yeniFatura: Invoice = {
-            id: `inv-${Date.now()}`,
-            faturaNo: `FTR2026${String(faturalar.length + 1).padStart(4, '0')}`,
+          const guncelFatura: Invoice = {
+            id: duzenlemeModu ? duzenlenenFatura!.id : `inv-${Date.now()}`,
+            faturaNo: duzenlemeModu ? duzenlenenFatura!.faturaNo : `FTR2026${String(faturalar.length + 1).padStart(4, '0')}`,
             musteri: degerler.musteri,
             duzenlemeTarihi: degerler.duzenlemeTarihi!.toISOString().slice(0, 10),
             vadeTarihi: degerler.vadeTarihi!.toISOString().slice(0, 10),
             tutar: genelToplamHesapla(degerler.kalemler),
             tip: degerler.tip as FaturaTipi,
-            durum: 'Bekliyor',
+            durum: duzenlemeModu ? duzenlenenFatura!.durum : 'Bekliyor',
             kalemler: degerler.kalemler,
           }
 
           try {
-            await dispatch(faturaEkle(yeniFatura)).unwrap()
+            if (duzenlemeModu) {
+              await dispatch(faturaDuzenle(guncelFatura)).unwrap()
+            } else {
+              await dispatch(faturaEkle(guncelFatura)).unwrap()
+            }
             navigate('/')
           } catch {
             setSubmitting(false)
@@ -226,7 +258,7 @@ function YeniFaturaSayfasi() {
             </div>
 
             <button type="submit" className={styles.kaydetButon} disabled={isSubmitting}>
-              {isSubmitting ? 'Kaydediliyor...' : 'Faturayı Kaydet'}
+              {isSubmitting ? 'Kaydediliyor...' : duzenlemeModu ? 'Değişiklikleri Kaydet' : 'Faturayı Kaydet'}
             </button>
           </Form>
         )}

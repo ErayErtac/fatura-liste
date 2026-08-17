@@ -50,3 +50,25 @@
     background-color: #E7E1B1;
   }
 }
+
+.islemHucresi {
+  display: flex;
+  gap: 6px;
+}
+
+.editButton {
+  cursor: pointer;
+  border: 1px solid #306D29;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  color: #306D29;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+
+  &:hover {
+    background-color: #E7E1B1;
+  }
+}

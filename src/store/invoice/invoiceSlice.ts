@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { Invoice } from '../../models/invoice'
-import { faturalariGetir, faturaOlustur } from '../../api/resources/invoice'
+import { faturalariGetir, faturaOlustur, faturaGuncelle } from '../../api/resources/invoice'
 
 interface InvoiceState {
   liste: Invoice[]
@@ -24,6 +24,11 @@ export const faturaEkle = createAsyncThunk('invoice/faturaEkle', async (fatura: 
   return eklenenFatura
 })
 
+export const faturaDuzenle = createAsyncThunk('invoice/faturaDuzenle', async (fatura: Invoice) => {
+  const guncellenenFatura = await faturaGuncelle(fatura)
+  return guncellenenFatura
+})
+
 const invoiceSlice = createSlice({
   name: 'invoice',
   initialState: baslangicState,
@@ -44,6 +49,12 @@ const invoiceSlice = createSlice({
       })
       .addCase(faturaEkle.fulfilled, (state, action) => {
         state.liste.unshift(action.payload)
+      })
+      .addCase(faturaDuzenle.fulfilled, (state, action) => {
+        const index = state.liste.findIndex((f) => f.id === action.payload.id)
+        if (index !== -1) {
+          state.liste[index] = action.payload
+        }
       })
   },
 })
