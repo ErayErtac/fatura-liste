@@ -2,6 +2,7 @@ import { NavLink, Route, Routes } from 'react-router-dom'
 import FaturaListesiSayfasi from './pages/FaturaListesiSayfasi'
 import YeniFaturaSayfasi from './pages/YeniFaturaSayfasi'
 import MusterilerSayfasi from './pages/MusterilerSayfasi'
+import DashboardSayfasi from './pages/DashboardSayfasi'
 import styles from './App.module.scss'
 import './App.css'
 
@@ -18,6 +19,9 @@ function App() {
         <NavLink to="/musteriler" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}>
           Müşteriler
         </NavLink>
+        <NavLink to="/dashboard" className={({ isActive }) => isActive ? `${styles.navLink} ${styles.navLinkActive}` : styles.navLink}>
+          Dashboard
+        </NavLink>
       </nav>
 
       <Routes>
@@ -25,6 +29,7 @@ function App() {
         <Route path="/yeni-fatura" element={<YeniFaturaSayfasi />} />
         <Route path="/fatura-duzenle/:id" element={<YeniFaturaSayfasi />} />
         <Route path="/musteriler" element={<MusterilerSayfasi />} />
+        <Route path="/dashboard" element={<DashboardSayfasi />} />
       </Routes>
     </div>
   )

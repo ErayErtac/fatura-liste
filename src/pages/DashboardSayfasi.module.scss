@@ -1,0 +1,18 @@
+.gridAlan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.kart {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.kartBaslik {
+  font-size: 1rem;
+  color: #0D530E;
+  margin: 0 0 12px;
+}
