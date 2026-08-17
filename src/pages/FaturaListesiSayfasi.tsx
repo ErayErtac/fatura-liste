@@ -7,8 +7,9 @@ import { bosFiltre } from '../components/filterDefaults'
 import type { FilterValues } from '../components/FilterForm'
 import type { Invoice } from '../models/invoice'
 import { useAppDispatch, useAppSelector } from '../store/hook'
-import { faturalariYukle } from '../store/invoice/invoiceSlice'
+import { faturalariYukle, faturaKaldir } from '../store/invoice/invoiceSlice'
 import styles from './FaturaListesiSayfasi.module.scss'
+import ConfirmDialog from '../components/ConfirmDialog'
 
 type SiralamaAlani = keyof Pick<Invoice, 'faturaNo' | 'musteri' | 'tutar' | 'duzenlemeTarihi' | 'vadeTarihi'>
 type SiralamaYonu = 'asc' | 'desc'
@@ -25,6 +26,7 @@ function FaturaListesiSayfasi() {
   const [sayfaNo, setSayfaNo] = useState(1)
   const [sayfaBoyutu, setSayfaBoyutu] = useState(10)
   const [seciliFatura, setSeciliFatura] = useState<Invoice | null>(null)
+  const [silinecekFatura, setSilinecekFatura] = useState<Invoice | null>(null)
 
   useEffect(() => {
     dispatch(faturalariYukle())
@@ -96,6 +98,12 @@ function FaturaListesiSayfasi() {
     setSayfaNo(1)
   }
 
+  async function silmeyiOnayla() {
+  if (!silinecekFatura) return
+  await dispatch(faturaKaldir(silinecekFatura.id))
+  setSilinecekFatura(null)
+  }
+
   if (yukleniyor) {
     return <div className={styles.durumMesaji}>Yükleniyor...</div>
   }
@@ -131,7 +139,12 @@ function FaturaListesiSayfasi() {
             </thead>
             <tbody>
               {sayfadakiFaturalar.map((fatura) => (
-                <InvoiceRow key={fatura.id} fatura={fatura} onGoruntule={setSeciliFatura} />
+                <InvoiceRow
+                  key={fatura.id}
+                  fatura={fatura}
+                  onGoruntule={setSeciliFatura}
+                  onSilmeTalebi={setSilinecekFatura}
+                />
               ))}
             </tbody>
           </table>
@@ -157,6 +170,13 @@ function FaturaListesiSayfasi() {
       </div>
 
       <InvoiceDetailModal fatura={seciliFatura} onClose={() => setSeciliFatura(null)} />
+      <ConfirmDialog
+        acikMi={silinecekFatura !== null}
+        baslik="Faturayı Sil"
+        mesaj={silinecekFatura ? `"${silinecekFatura.faturaNo}" numaralı faturayı silmek istediğinize emin misiniz?` : ''}
+        onOnayla={silmeyiOnayla}
+        onVazgec={() => setSilinecekFatura(null)}
+      />  
     </div>
   )
 }

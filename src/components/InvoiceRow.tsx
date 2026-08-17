@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom'
 interface InvoiceRowProps {
   fatura: Invoice
   onGoruntule: (fatura: Invoice) => void
+  onSilmeTalebi: (fatura: Invoice) => void
 }
 
-function InvoiceRow({ fatura, onGoruntule }: InvoiceRowProps) {
+function InvoiceRow({ fatura, onGoruntule, onSilmeTalebi }: InvoiceRowProps) {
   const durumClass =
     fatura.durum === 'Ödendi' ? styles.paid :
     fatura.durum === 'Gecikmiş' ? styles.overdue :
@@ -37,6 +38,14 @@ function InvoiceRow({ fatura, onGoruntule }: InvoiceRowProps) {
         <Link to={`/fatura-duzenle/${fatura.id}`} className={styles.editButton} title="Faturayı düzenle">
           ✎ Düzenle
         </Link>
+        <button
+          type="button"
+          className={styles.deleteButton}
+          onClick={() => onSilmeTalebi(fatura)}
+          title="Faturayı sil"
+        >
+          🗑
+        </button>
       </td>
     </tr>
   )

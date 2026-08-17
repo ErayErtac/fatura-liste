@@ -20,10 +20,6 @@ function App() {
       <Routes>
         <Route path="/" element={<FaturaListesiSayfasi />} />
         <Route path="/yeni-fatura" element={<YeniFaturaSayfasi />} />
-      </Routes>
-      <Routes>
-        <Route path="/" element={<FaturaListesiSayfasi />} />
-        <Route path="/yeni-fatura" element={<YeniFaturaSayfasi />} />
         <Route path="/fatura-duzenle/:id" element={<YeniFaturaSayfasi />} />
       </Routes>
     </div>
