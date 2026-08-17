@@ -81,3 +81,33 @@
   background-color: #ffffff;
   border-radius: 10px;
 }
+
+.topluIslemCubugu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #FBF5DD;
+  border: 1px solid #E7E1B1;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 12px;
+
+  span {
+    font-weight: 600;
+    color: #0D530E;
+  }
+
+  button {
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-weight: 600;
+    border: 1px solid #306D29;
+    background-color: #ffffff;
+    color: #306D29;
+
+    &:hover {
+      background-color: #E7E1B1;
+    }
+  }
+}

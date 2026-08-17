@@ -1,0 +1,94 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 20, 20, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 24px 28px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.baslik {
+  margin: 0 0 18px;
+  color: #0D530E;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #306D29;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  input {
+    border: 1px solid #E7E1B1;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+
+    &:focus {
+      outline: none;
+      border-color: #0D530E;
+    }
+  }
+}
+
+.error {
+  color: #b02a2a;
+  font-size: 0.75rem;
+}
+
+.butonlar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.vazgecButon {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+.kaydetButon {
+  cursor: pointer;
+  border: none;
+  background-color: #306D29;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-weight: 600;
+
+  &:hover {
+    background-color: #0D530E;
+  }
+}

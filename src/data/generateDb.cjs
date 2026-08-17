@@ -28,6 +28,13 @@ function faturaUret(index) {
 
 const invoices = Array.from({ length: 120 }, (_, i) => faturaUret(i + 1))
 
+const musterilerListesi = musteriler.map((isim, index) => ({
+  id: `musteri-${index + 1}`,
+  ad: isim,
+  email: `${isim.toLowerCase().replace(/[^a-z0-9]+/g, '.').replace(/^\.+|\.+$/g, '')}@ornek.com`,
+  telefon: `05${String(300000000 + index * 1111111).slice(0, 9)}`,
+}))
+
 const fs = require('fs')
-fs.writeFileSync('db.json', JSON.stringify({ invoices }, null, 2))
-console.log('db.json olusturuldu:', invoices.length, 'kayit')
+fs.writeFileSync('db.json', JSON.stringify({ invoices, musteriler: musterilerListesi }, null, 2))
+console.log('db.json olusturuldu:', invoices.length, 'fatura,', musterilerListesi.length, 'musteri')

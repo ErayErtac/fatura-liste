@@ -1,0 +1,71 @@
+.baslikSatiri {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.yeniButon {
+  cursor: pointer;
+  border: none;
+  background-color: #306D29;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: 700;
+
+  &:hover {
+    background-color: #0D530E;
+  }
+}
+
+.tableWrapper {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  thead th {
+    background-color: #306D29;
+    color: #ffffff;
+    font-weight: 700;
+  }
+}
+
+.islemHucresi {
+  display: flex;
+  gap: 6px;
+
+  button {
+    cursor: pointer;
+    border: 1px solid #306D29;
+    background-color: #fff;
+    color: #306D29;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+
+    &:hover {
+      background-color: #E7E1B1;
+    }
+  }
+}
+
+.durumMesaji {
+  padding: 24px;
+  text-align: center;
+  color: #666;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
