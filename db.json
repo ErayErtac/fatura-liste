@@ -1244,5 +1244,6 @@
       "email": "zt.rk.tekstil.ltd@ornek.com",
       "telefon": "05306666666"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

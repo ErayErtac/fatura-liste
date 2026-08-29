@@ -11,6 +11,8 @@ import { useAppDispatch, useAppSelector } from '../store/hook'
 import { faturalariYukle, faturaKaldir } from '../store/invoice/invoiceSlice'
 import { faturalariExceleAktar } from '../utils/excelAktar'
 import styles from './FaturaListesiSayfasi.module.scss'
+import { useToast } from '../components/useToast'
+import VadeUyarisi from '../components/VadeUyarisi'
 import { useTranslation } from 'react-i18next'
 
 type SiralamaAlani = keyof Pick<Invoice, 'faturaNo' | 'musteri' | 'tutar' | 'duzenlemeTarihi' | 'vadeTarihi'>
@@ -22,6 +24,7 @@ function FaturaListesiSayfasi() {
   const yukleniyor = useAppSelector((state) => state.invoice.yukleniyor)
   const hata = useAppSelector((state) => state.invoice.hata)
   const { t } = useTranslation()
+  const { bildirGoster } = useToast()
 
   const [filtre, setFiltre] = useState<FilterValues>(bosFiltre)
   const [siralamaAlani, setSiralamaAlani] = useState<SiralamaAlani>('faturaNo')
@@ -104,9 +107,10 @@ function FaturaListesiSayfasi() {
   }
 
   async function silmeyiOnayla() {
-    if (!silinecekFatura) return
-    await dispatch(faturaKaldir(silinecekFatura.id))
-    setSilinecekFatura(null)
+  if (!silinecekFatura) return
+  await dispatch(faturaKaldir(silinecekFatura.id))
+  bildirGoster('Fatura silindi.')
+  setSilinecekFatura(null)
   }
 
   function secimiDegistir(id: string) {
@@ -127,9 +131,11 @@ function FaturaListesiSayfasi() {
   }
 
   async function topluSilmeyiOnayla() {
-    await Promise.all(seciliIdler.map((id) => dispatch(faturaKaldir(id))))
-    setSeciliIdler([])
-    setTopluSilmeOnayAcik(false)
+  const adet = seciliIdler.length
+  await Promise.all(seciliIdler.map((id) => dispatch(faturaKaldir(id))))
+  bildirGoster(`${adet} fatura silindi.`)
+  setSeciliIdler([])
+  setTopluSilmeOnayAcik(false)
   }
 
   if (yukleniyor) {
@@ -144,6 +150,8 @@ function FaturaListesiSayfasi() {
     <div>
       <h1>{t('faturaListesi.baslik')}</h1>
 
+      <VadeUyarisi />
+      
       <FilterForm musteriler={musteriler} onFiltrele={filtreUygula} />
 
       <SummaryCards faturalar={gorunenFaturalar} />

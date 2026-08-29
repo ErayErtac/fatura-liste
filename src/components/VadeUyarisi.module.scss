@@ -1,0 +1,25 @@
+.uyariKutusu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.satir {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.gecikenSatir {
+  background-color: #fde2e2;
+  color: #b02a2a;
+  border: 1px solid #f3b8b8;
+}
+
+.yaklasanSatir {
+  background-color: #fff3cd;
+  color: #8a6d00;
+  border: 1px solid #f0dca0;
+}

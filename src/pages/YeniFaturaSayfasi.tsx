@@ -9,6 +9,7 @@ import type { FaturaKalemi, FaturaTipi, Invoice } from '../models/invoice'
 import { paraFormatla } from '../utils/format'
 import { useAppDispatch, useAppSelector } from '../store/hook'
 import { faturaEkle, faturaDuzenle } from '../store/invoice/invoiceSlice'
+import { useToast } from '../components/useToast'
 import styles from './YeniFaturaSayfasi.module.scss'
 
 interface YeniFaturaFormValues {
@@ -56,6 +57,7 @@ function YeniFaturaSayfasi() {
   const duzenlenenFatura = duzenlemeModu ? faturalar.find((f) => f.id === id) : undefined
 
   const kalemSayaci = useRef(0)
+  const { bildirGoster } = useToast()
 
   function yeniKalemId() {
     kalemSayaci.current += 1
@@ -120,16 +122,18 @@ function YeniFaturaSayfasi() {
             kalemler: degerler.kalemler,
           }
 
-          try {
+         try {
             if (duzenlemeModu) {
               await dispatch(faturaDuzenle(guncelFatura)).unwrap()
+              bildirGoster('Fatura güncellendi.')
             } else {
               await dispatch(faturaEkle(guncelFatura)).unwrap()
+              bildirGoster('Fatura kaydedildi.')
             }
             navigate('/')
           } catch {
             setSubmitting(false)
-            alert('Fatura kaydedilirken bir hata oluştu. json-server çalışıyor mu?')
+            bildirGoster('Fatura kaydedilirken bir hata oluştu.', 'hata')
           }
         }}
       >

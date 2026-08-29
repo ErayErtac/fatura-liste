@@ -1,0 +1,37 @@
+.toastKapsayici {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2000;
+}
+
+.toast {
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: kaymaGir 0.25s ease;
+}
+
+.basari {
+  background-color: #306D29;
+}
+
+.hata {
+  background-color: #b02a2a;
+}
+
+@keyframes kaymaGir {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
