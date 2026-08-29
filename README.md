@@ -13,6 +13,11 @@ PreAccounting Client projesindeki teknoloji yığınını ve kod kalıplarını 
 - **HTTP:** axios (sarmalayıcı ile)
 - **Sahte API:** json-server
 - **Kalite:** ESLint
+- **Routing:** react-router-dom
+- **Grafik:** recharts
+- **Dışa Aktarma:** xlsx
+- **Sanallaştırma:** react-window
+- **Çoklu Dil:** i18next, react-i18next
 
 ## Özellikler
 
@@ -25,6 +30,13 @@ PreAccounting Client projesindeki teknoloji yığınını ve kod kalıplarını 
 - Yükleniyor, hata ve boş liste durumları
 - Yeni fatura oluşturma: kalem bazlı (ürün/hizmet satırları), otomatik toplam hesaplama, Yup doğrulama, API'ye kayıt
 - React Router ile iki sayfa arası gezinme (Fatura Listesi / Yeni Fatura)
+- Fatura düzenleme ve silme (toplu silme dahil)
+- Müşteri yönetimi (ayrı CRUD ekranı)
+- Dashboard: aylık satış/alış grafiği, durum dağılımı pasta grafiği (recharts)
+- Excel'e aktarma (xlsx) ve fatura yazdırma/PDF (window.print)
+- Çoklu dil desteği (TR/EN, i18next)
+- Sanallaştırılmış liste görünümü (react-window, büyük veri setleri için)
+- Toast bildirimleri ve vade uyarı sistemi (Context API)
 
 ## Kurulum
 
