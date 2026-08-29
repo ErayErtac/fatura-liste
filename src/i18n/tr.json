@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "faturaListesi": "Fatura Listesi",
+    "yeniFatura": "+ Yeni Fatura",
+    "musteriler": "Müşteriler",
+    "dashboard": "Dashboard"
+  },
+  "faturaListesi": {
+    "baslik": "Fatura Listesi",
+    "yukleniyor": "Yükleniyor...",
+    "bulunamadi": "Kriterlere uyan fatura bulunamadı.",
+    "onceki": "Önceki",
+    "sonraki": "Sonraki",
+    "sayfa": "Sayfa"
+  },
+  "tablo": {
+    "faturaNo": "Fatura No",
+    "musteri": "Müşteri",
+    "duzenlemeTarihi": "Düzenleme Tarihi",
+    "vadeTarihi": "Vade Tarihi",
+    "tutar": "Tutar",
+    "tip": "Tip",
+    "durum": "Durum",
+    "islem": "İşlem"
+  },
+  "ozet": {
+    "toplamFatura": "Toplam Fatura",
+    "toplamTutar": "Toplam Tutar",
+    "gecikenTutar": "Geciken Tutar"
+  }
+}

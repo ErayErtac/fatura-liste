@@ -11,6 +11,7 @@ import { useAppDispatch, useAppSelector } from '../store/hook'
 import { faturalariYukle, faturaKaldir } from '../store/invoice/invoiceSlice'
 import { faturalariExceleAktar } from '../utils/excelAktar'
 import styles from './FaturaListesiSayfasi.module.scss'
+import { useTranslation } from 'react-i18next'
 
 type SiralamaAlani = keyof Pick<Invoice, 'faturaNo' | 'musteri' | 'tutar' | 'duzenlemeTarihi' | 'vadeTarihi'>
 type SiralamaYonu = 'asc' | 'desc'
@@ -20,6 +21,7 @@ function FaturaListesiSayfasi() {
   const faturalar = useAppSelector((state) => state.invoice.liste)
   const yukleniyor = useAppSelector((state) => state.invoice.yukleniyor)
   const hata = useAppSelector((state) => state.invoice.hata)
+  const { t } = useTranslation()
 
   const [filtre, setFiltre] = useState<FilterValues>(bosFiltre)
   const [siralamaAlani, setSiralamaAlani] = useState<SiralamaAlani>('faturaNo')
@@ -131,7 +133,7 @@ function FaturaListesiSayfasi() {
   }
 
   if (yukleniyor) {
-    return <div className={styles.durumMesaji}>Yükleniyor...</div>
+    return <div className={styles.durumMesaji}>{t('faturaListesi.yukleniyor')}</div>
   }
 
   if (hata) {
@@ -140,7 +142,7 @@ function FaturaListesiSayfasi() {
 
   return (
     <div>
-      <h1>Fatura Listesi</h1>
+      <h1>{t('faturaListesi.baslik')}</h1>
 
       <FilterForm musteriler={musteriler} onFiltrele={filtreUygula} />
 
@@ -167,7 +169,7 @@ function FaturaListesiSayfasi() {
       )}
 
       {sayfadakiFaturalar.length === 0 ? (
-        <p className={styles.durumMesaji}>Kriterlere uyan fatura bulunamadı.</p>
+        <p className={styles.durumMesaji}>{t('faturaListesi.bulunamadi')}</p>
       ) : (
         <div className={styles.tableWrapper}>
           <table className={styles.table}>
@@ -180,14 +182,14 @@ function FaturaListesiSayfasi() {
                     onChange={tumunuSec}
                   />
                 </th>
-                <th onClick={() => kolonaTikla('faturaNo')}>Fatura No{okIsareti('faturaNo')}</th>
-                <th onClick={() => kolonaTikla('musteri')}>Müşteri{okIsareti('musteri')}</th>
-                <th onClick={() => kolonaTikla('duzenlemeTarihi')}>Düzenleme Tarihi{okIsareti('duzenlemeTarihi')}</th>
-                <th onClick={() => kolonaTikla('vadeTarihi')}>Vade Tarihi{okIsareti('vadeTarihi')}</th>
-                <th onClick={() => kolonaTikla('tutar')}>Tutar{okIsareti('tutar')}</th>
-                <th>Tip</th>
-                <th>Durum</th>
-                <th>İşlem</th>
+                <th onClick={() => kolonaTikla('faturaNo')}>{t('tablo.faturaNo')}{okIsareti('faturaNo')}</th>
+                <th onClick={() => kolonaTikla('musteri')}>{t('tablo.musteri')}{okIsareti('musteri')}</th>
+                <th onClick={() => kolonaTikla('duzenlemeTarihi')}>{t('tablo.duzenlemeTarihi')}{okIsareti('duzenlemeTarihi')}</th>
+                <th onClick={() => kolonaTikla('vadeTarihi')}>{t('tablo.vadeTarihi')}{okIsareti('vadeTarihi')}</th>
+                <th onClick={() => kolonaTikla('tutar')}>{t('tablo.tutar')}{okIsareti('tutar')}</th>
+                <th>{t('tablo.tip')}</th>
+                <th>{t('tablo.durum')}</th>
+                <th>{t('tablo.islem')}</th>
               </tr>
             </thead>
             <tbody>
@@ -208,11 +210,11 @@ function FaturaListesiSayfasi() {
 
       <div className={styles.pagination}>
         <button disabled={sayfaNo === 1} onClick={() => setSayfaNo((s) => s - 1)}>
-          Önceki
+          {t('faturaListesi.onceki')}
         </button>
-        <span>Sayfa {sayfaNo} / {toplamSayfa}</span>
+        <span>{t('faturaListesi.sayfa')} {sayfaNo} / {toplamSayfa}</span>
         <button disabled={sayfaNo === toplamSayfa} onClick={() => setSayfaNo((s) => s + 1)}>
-          Sonraki
+          {t('faturaListesi.sonraki')}
         </button>
         <select
           value={sayfaBoyutu}

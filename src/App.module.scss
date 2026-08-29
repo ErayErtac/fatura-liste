@@ -27,3 +27,18 @@
     color: #ffffff;
   }
 }
+
+.dilButon {
+  cursor: pointer;
+  border: 1px solid #306D29;
+  background-color: #ffffff;
+  color: #306D29;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: 600;
+  margin-left: auto;
+
+  &:hover {
+    background-color: #E7E1B1;
+  }
+}

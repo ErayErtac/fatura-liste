@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "faturaListesi": "Invoice List",
+    "yeniFatura": "+ New Invoice",
+    "musteriler": "Customers",
+    "dashboard": "Dashboard"
+  },
+  "faturaListesi": {
+    "baslik": "Invoice List",
+    "yukleniyor": "Loading...",
+    "bulunamadi": "No invoices match the criteria.",
+    "onceki": "Previous",
+    "sonraki": "Next",
+    "sayfa": "Page"
+  },
+  "tablo": {
+    "faturaNo": "Invoice No",
+    "musteri": "Customer",
+    "duzenlemeTarihi": "Issue Date",
+    "vadeTarihi": "Due Date",
+    "tutar": "Amount",
+    "tip": "Type",
+    "durum": "Status",
+    "islem": "Action"
+  },
+  "ozet": {
+    "toplamFatura": "Total Invoices",
+    "toplamTutar": "Total Amount",
+    "gecikenTutar": "Overdue Amount"
+  }
+}
